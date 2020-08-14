@@ -4,15 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Login">
+    tools:context=".Register_User">
 
-    <TextView
-        android:id="@+id/textView"
+    <Button
+        android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#9E0000"
-        android:text="LOGIN"
-        android:textColor="#FFFFFF"
-        tools:layout_editor_absoluteX="179dp"
-        tools:layout_editor_absoluteY="329dp" />
+        android:text="REGISTRAZIONE UTENTE"
+        tools:layout_editor_absoluteX="112dp"
+        tools:layout_editor_absoluteY="341dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
