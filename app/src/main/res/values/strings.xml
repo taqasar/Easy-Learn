@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Easy Learn</string>
+    <string name="splash_logo">logo</string>
+    <string name="logReg_title">Ciao</string>
+    <string name="logReg_title_2">Ciao!</string>
+    <string name="logReg_sub">Accedi e comincia subito ad imparare</string>
+    <string name="logReg_log_btn">Login</string>
+    <string name="no_account_title">Non possiedi un account?</string>
+    <string name="registrati">Registrati</string>
 </resources>
