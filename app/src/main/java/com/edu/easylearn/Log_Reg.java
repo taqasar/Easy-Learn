@@ -20,7 +20,7 @@ public class Log_Reg extends AppCompatActivity {
 
         getSupportActionBar().hide();
 
-        lg_btn = findViewById(R.id.logReg_log_btn);
+        lg_btn = findViewById(R.id.login_btn);
 
         lg_btn.setOnClickListener(new View.OnClickListener() {
             @Override
