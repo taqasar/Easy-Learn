@@ -1,5 +1,6 @@
 package com.edu.easylearn;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -9,15 +10,40 @@ import android.text.Spanned;
 import android.text.style.ForegroundColorSpan;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
-import org.w3c.dom.Text;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import es.dmoral.toasty.Toasty;
 
 public class Register_User extends AppCompatActivity {
 
     private TextView title_main;
     private ImageView back;
+    private EditText name;
+    private EditText mail;
+    private EditText pwd;
+    private Button register;
+
+    // Variabili legati ai dati per la registrazione
+
+    private String name_s = "";
+    private String mail_s = "";
+    private String pwd_s = "";
+
+    private FirebaseAuth Auth;
+    private DatabaseReference db_ref;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +51,9 @@ public class Register_User extends AppCompatActivity {
         setContentView(R.layout.activity_register__user);
 
         getSupportActionBar().hide();
+
+        Auth = FirebaseAuth.getInstance();
+        db_ref = FirebaseDatabase.getInstance().getReference();
 
         title_main = findViewById(R.id.reg_title);
 
@@ -42,6 +71,67 @@ public class Register_User extends AppCompatActivity {
             public void onClick(View v) {
                 Intent back_from_reg_intent = new Intent(Register_User.this,Log_Reg.class);
                 startActivity(back_from_reg_intent);
+            }
+        });
+
+        name = findViewById(R.id.reg_name);
+        mail = findViewById(R.id.reg_mail_s);
+        pwd = findViewById(R.id.reg_pwd_s);
+
+        register = findViewById(R.id.avvia_app);
+
+        register.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                name_s = name.getText().toString();
+                mail_s = mail.getText().toString();
+                pwd_s = pwd.getText().toString();
+
+                if(!name_s.isEmpty() && !mail_s.isEmpty() && !pwd_s.isEmpty()){
+
+                    if(pwd_s.length() >= 6){
+
+                        register_User();
+
+                    }else{
+                        Toasty.warning(Register_User.this,"La password deve avere almeno 6 caratteri",Toast.LENGTH_LONG).show();
+                    }
+                }else{
+                    Toasty.warning(Register_User.this,"Compilare i campi richiesti",Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+    }
+
+    private void register_User(){
+        Auth.createUserWithEmailAndPassword(mail_s,pwd_s).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull final Task<AuthResult> task) {
+                if(task.isSuccessful()){
+
+                    Map<String,Object> map = new HashMap<>();
+
+                    map.put("nome",name_s);
+                    map.put("e-mail",mail_s);
+                    map.put("password",pwd_s);
+
+                    String id = Auth.getCurrentUser().getUid();
+
+                    db_ref.child("Utenti").child(id).setValue(map).addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> subtask) {
+                            if(subtask.isSuccessful()){
+                                Toasty.success(Register_User.this,"Account creato!",Toast.LENGTH_LONG).show();
+                                startActivity(new Intent(Register_User.this,temp.class));
+                                finish();
+                            }else{
+                                Toasty.error(Register_User.this,"C'è stato qualche problema...account non creato",Toast.LENGTH_LONG).show();
+                            }
+                        }
+                    });
+                }else{
+                    Toasty.error(Register_User.this,"Qualcosa è andato storto...account non creato",Toast.LENGTH_LONG).show();
+                }
             }
         });
     }

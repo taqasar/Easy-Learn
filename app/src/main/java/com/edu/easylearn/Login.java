@@ -1,5 +1,6 @@
 package com.edu.easylearn;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -14,6 +15,14 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+
+import es.dmoral.toasty.Toasty;
 
 public class Login extends AppCompatActivity {
 
@@ -26,12 +35,21 @@ public class Login extends AppCompatActivity {
     private EditText mail;
     private EditText pwd;
 
+    // Variabili per il login
+
+    private String mail_l;
+    private String pwd_l;
+
+    private FirebaseAuth sAuth;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
         getSupportActionBar().hide();
+
+        sAuth = FirebaseAuth.getInstance();
 
         title = findViewById(R.id.login_title);
         String text = "Bentornato.";
@@ -73,7 +91,55 @@ public class Login extends AppCompatActivity {
 
         forgot_pass = findViewById(R.id.forgot_pwd);
         log = findViewById(R.id.login_btn);
+
         mail = findViewById(R.id.login_email);
         pwd = findViewById(R.id.login_pwd);
+
+        log.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mail_l = mail.getText().toString();
+                pwd_l = pwd.getText().toString();
+
+                if(!mail_l.isEmpty() && !pwd_l.isEmpty()){
+                    login_User();
+
+                }else{
+                    Toasty.warning(Login.this,"Dati non corretti", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+
+        forgot_pass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Login.this,Forgot_pwd.class));
+            }
+        });
     }
+
+    private void login_User(){
+        sAuth.signInWithEmailAndPassword(mail_l,pwd_l).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if(task.isSuccessful()){
+                    Toasty.success(Login.this,"Accesso effettuato",Toast.LENGTH_LONG).show();
+                    startActivity(new Intent(Login.this,temp.class));
+                    finish();
+                }else{
+                    Toasty.error(Login.this,"Email e/o password non valido",Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        if(sAuth.getCurrentUser() != null) {
+            startActivity(new Intent(Login.this,temp.class));
+            finish();
+        }
+        }
 }

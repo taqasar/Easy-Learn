@@ -38,4 +38,10 @@
     <string name="oppure">oppure</string>
     <string name="reg_fb">Continua con Facebook</string>
     <string name="reg_goo">Continua con Google</string>
+    <string name="exit_from_home">Esci</string>
+    <string name="infos">questa è la HOME</string>
+    <string name="back_to_login">TODO</string>
+    <string name="pass_recover_txt">Inserire la propria email:</string>
+    <string name="pwd_recover_sub">Inserire la propria email per poter impostare\nuna nuova password d\'accesso. Controllare l\'inbox\ndell\'email inserita e seguire le istruzioni per impostare\nuna nuova password.</string>
+    <string name="pwd_recover_btn">Invia link di recupero</string>
 </resources>
