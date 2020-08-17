@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_centerInParent="false"
+    android:layout_centerHorizontal="false"
+    android:layout_centerVertical="false"
+    android:gravity="center"
+    android:orientation="vertical">
+
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="53dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:onClick="ClickCross"
+        android:background="@drawable/ic_close_black_24dp"
+        android:backgroundTint="#474747" />
+
+    <ImageView
+        android:layout_width="337dp"
+        android:layout_height="88dp"
+        android:layout_margin="16dp"
+        android:onClick="ClickAccountPhoto"
+        android:src="@drawable/gkm8776_1_2_3" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Matteo Renzi"
+        android:textColor="#636363"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="matteorenzi@senato.it" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="38dp"
+        android:gravity="center_vertical"
+        android:onClick="ClickProfilo"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="31dp"
+            android:layout_height="31dp"
+            android:layout_margin="20dp"
+            android:layout_marginEnd="0dp"
+            android:background="#00FFFFFF"
+            android:src="@drawable/profilo" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/sf_ui_display_light"
+            android:padding="12dp"
+            android:text="Profilo"
+            android:textColor="#474747"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:onClick="ClickCorsiSalvati"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="31dp"
+            android:layout_height="31dp"
+            android:layout_margin="20dp"
+            android:layout_marginEnd="0dp"
+            android:background="#00FFFFFF"
+            android:src="@drawable/prefe" />
+
+        <TextView
+            android:id="@+id/font"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/sf_ui_display_light"
+            android:padding="12dp"
+            android:text="Corsi Salvati"
+            android:textColor="#474747"
+            android:textSize="18sp" />
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:onClick="ClickEasyUtility"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="31dp"
+            android:layout_height="31dp"
+            android:layout_margin="20dp"
+            android:layout_marginEnd="0dp"
+            android:background="#00FFFFFF"
+            android:src="@drawable/compiler" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/sf_ui_display_light"
+            android:padding="12dp"
+            android:text="Easy Utility"
+            android:textColor="#474747"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:onClick="ClickImpostazioni"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="31dp"
+            android:layout_height="31dp"
+            android:layout_margin="20dp"
+            android:layout_marginEnd="0dp"
+            android:background="#00FFFFFF"
+            android:src="@drawable/setting" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/sf_ui_display_light"
+            android:padding="12dp"
+            android:text="Impostazioni"
+            android:textColor="#474747"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:onClick="ClickAbout"
+        android:orientation="horizontal">
+
+
+        <ImageView
+            android:layout_width="31dp"
+            android:layout_height="31dp"
+            android:layout_margin="20dp"
+            android:layout_marginEnd="0dp"
+            android:background="#00FFFFFF"
+            android:src="@drawable/about" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/sf_ui_display_light"
+            android:padding="12dp"
+            android:text="About"
+            android:textColor="#474747"
+            android:textSize="18sp" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:onClick="ClickCondividi"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="31dp"
+            android:layout_height="31dp"
+            android:layout_margin="20dp"
+            android:layout_marginEnd="0dp"
+            android:background="#00FFFFFF"
+            android:src="@drawable/share" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/sf_ui_display_light"
+            android:padding="12dp"
+            android:text="Condividi"
+            android:textColor="#474747"
+            android:textSize="18sp" />
+
+
+    </LinearLayout>
+
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="1dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="#FF0092" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:alpha="0.50"
+        android:onClick="ClickLogout"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="198dp"
+            android:layout_height="31dp"
+            android:layout_gravity="center|center_horizontal"
+            android:alpha="1"
+            android:paddingLeft="150dp"
+            android:src="@drawable/logout" />
+
+        <TextView
+            android:layout_width="54dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="0"
+            android:alpha="1"
+            android:fontFamily="@font/sf_ui_display_light"
+            android:gravity="center"
+            android:text="Logout"
+            android:textColor="#474747"
+            android:textSize="18sp" />
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

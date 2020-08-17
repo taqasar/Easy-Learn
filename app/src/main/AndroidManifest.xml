@@ -12,7 +12,16 @@
         android:roundIcon="@drawable/ic_logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Forgot_pwd"></activity>
+        <activity android:name=".Condividi"></activity>
+        <activity android:name=".About" />
+        <activity android:name=".Impostazioni" />
+        <activity android:name=".EasyUtility" />
+        <activity android:name=".CorsiSalvati" />
+        <activity android:name=".Home" />
+        <activity android:name=".Profilo" />
+        <activity android:name=".Cerca" />
+        <activity android:name=".Quiz" />
+        <activity android:name=".Forgot_pwd" />
         <activity android:name=".temp" />
         <activity android:name=".User_Help" />
         <activity android:name=".Register_User" />
