@@ -124,7 +124,7 @@ public class Login extends AppCompatActivity {
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
                     Toasty.success(Login.this,"Accesso effettuato",Toast.LENGTH_LONG).show();
-                    startActivity(new Intent(Login.this,temp.class));
+                    startActivity(new Intent(Login.this,Home.class));
                     finish();
                 }else{
                     Toasty.error(Login.this,"Email e/o password non valido",Toast.LENGTH_LONG).show();

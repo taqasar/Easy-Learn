@@ -30,7 +30,7 @@ public class Log_Reg extends AppCompatActivity {
             }
         });
 
-        reg_txt = findViewById(R.id.Registrati);
+        reg_txt = (TextView) findViewById(R.id.Registrati);
 
         reg_txt.setOnClickListener(new View.OnClickListener() {
             @Override
