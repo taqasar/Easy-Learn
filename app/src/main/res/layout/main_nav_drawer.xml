@@ -12,12 +12,12 @@
 
     <Button
         android:id="@+id/button"
-        android:layout_width="53dp"
-        android:layout_height="wrap_content"
+        android:layout_width="19dp"
+        android:layout_height="17dp"
         android:layout_gravity="right"
-        android:onClick="ClickCross"
         android:background="@drawable/ic_close_black_24dp"
-        android:backgroundTint="#474747" />
+        android:backgroundTint="#474747"
+        android:onClick="ClickCross" />
 
     <ImageView
         android:layout_width="337dp"

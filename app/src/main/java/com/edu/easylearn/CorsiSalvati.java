@@ -10,6 +10,7 @@ public class CorsiSalvati extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_corsi_salvati);
+        getSupportActionBar().hide();
 
         /**
          * DA AGGIUNGERE CODICE JAVA

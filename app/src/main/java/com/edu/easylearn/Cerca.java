@@ -16,6 +16,8 @@ public class Cerca extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cerca);
 
+        getSupportActionBar().hide();
+
         //Initialize and Assign Variable
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
 
