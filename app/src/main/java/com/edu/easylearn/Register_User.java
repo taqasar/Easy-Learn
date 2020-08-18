@@ -158,7 +158,7 @@ public class Register_User extends AppCompatActivity {
                         public void onComplete(@NonNull Task<Void> subtask) {
                             if(subtask.isSuccessful()){
                                 Toasty.success(Register_User.this,"Account creato!",Toast.LENGTH_LONG).show();
-                                startActivity(new Intent(Register_User.this,temp.class));
+                                startActivity(new Intent(Register_User.this,Home.class));
                                 finish();
                             }else{
                                 Toasty.error(Register_User.this,"C'è stato qualche problema...account non creato",Toast.LENGTH_LONG).show();
@@ -196,7 +196,7 @@ public class Register_User extends AppCompatActivity {
 
             // Signed in successfully, show authenticated UI.
             Toasty.success(Register_User.this,"Accesso eseguito",Toast.LENGTH_LONG).show();
-            startActivity(new Intent(Register_User.this,temp.class));
+            startActivity(new Intent(Register_User.this,Home.class));
         } catch (ApiException e) {
             // The ApiException status code indicates the detailed failure reason.
             // Please refer to the GoogleSignInStatusCodes class reference for more information.

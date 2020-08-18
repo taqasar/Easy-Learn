@@ -44,4 +44,7 @@
     <string name="pass_recover_txt">Inserire la propria email:</string>
     <string name="pwd_recover_sub">Inserire la propria email per poter impostare\nuna nuova password d\'accesso. Controllare l\'inbox\ndell\'email inserita e seguire le istruzioni per impostare\nuna nuova password.</string>
     <string name="pwd_recover_btn">Invia link di recupero</string>
+    <string name="banner_txt">Il tuo portale\nper l\'informatica</string>
+    <string name="banner">TODO</string>
+    <string name="lib_title">Libreria delle Easy guide</string>
 </resources>
