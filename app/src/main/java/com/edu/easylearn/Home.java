@@ -61,6 +61,11 @@ public class Home extends AppCompatActivity {
     private TextView mail_prof;
     private TextView banner_text;
 
+    private ImageView web;
+    private ImageView db;
+    private ImageView mobile;
+    private ImageView algo;
+
     private CircleImageView img_prof;
     private Uri img_uri;
     private FirebaseStorage storage;
@@ -180,6 +185,11 @@ public class Home extends AppCompatActivity {
         ss.setSpan(el_pink,19,33, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
 
         banner_text.setText(ss);
+
+        web = findViewById(R.id.macro_web);
+        db = findViewById(R.id.macro_db);
+        mobile = findViewById(R.id.macro_mobile);
+        algo = findViewById(R.id.macro_algo);
     }
 
     private void choosePic(){
