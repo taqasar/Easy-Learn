@@ -47,4 +47,9 @@
     <string name="banner_txt">Il tuo portale\nper l\'informatica</string>
     <string name="banner">TODO</string>
     <string name="lib_title">Libreria delle Easy guide</string>
+    <string name="macro_db">TODO</string>
+    <string name="macro_web">TODO</string>
+    <string name="macro_mobile">TODO</string>
+    <string name="macro_algo">TODO</string>
+    <string name="banner_long">TODO</string>
 </resources>
