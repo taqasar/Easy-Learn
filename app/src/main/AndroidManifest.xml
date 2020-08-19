@@ -45,7 +45,6 @@
         <activity android:name=".Cerca" />
         <activity android:name=".Quiz" />
         <activity android:name=".Forgot_pwd" />
-        <activity android:name=".temp" />
         <activity android:name=".User_Help" />
         <activity android:name=".Register_User" />
         <activity android:name=".Login" />

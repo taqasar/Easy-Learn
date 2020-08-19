@@ -138,7 +138,7 @@ public class Login extends AppCompatActivity {
         super.onStart();
 
         if(sAuth.getCurrentUser() != null) {
-            startActivity(new Intent(Login.this,temp.class));
+            startActivity(new Intent(Login.this,Home.class));
             finish();
         }
         }
