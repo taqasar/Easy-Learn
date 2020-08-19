@@ -13,6 +13,7 @@ import android.os.Bundle;
 import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -21,6 +22,8 @@ public class Home extends AppCompatActivity {
     //Initialize variable
     DrawerLayout drawerLayout;
 
+    private Button tmp;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,6 +31,15 @@ public class Home extends AppCompatActivity {
 
         getSupportActionBar().hide();
 
+
+        tmp = findViewById(R.id.bnt_tmp);
+
+        tmp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Home.this,SviluppoWeb.class));
+            }
+        });
 
         //Initialize and Assign Variable
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
