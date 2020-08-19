@@ -305,7 +305,6 @@ public class Home extends AppCompatActivity {
     public void ClickMenu(View view ) {
         //Open drawer
         openDrawer (drawerLayout);
-
     }
 
     private static void openDrawer(DrawerLayout drawerLayout) {
