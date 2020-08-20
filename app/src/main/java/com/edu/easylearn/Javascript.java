@@ -13,8 +13,11 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+import es.dmoral.toasty.Toasty;
 
 public class Javascript extends AppCompatActivity {
 
@@ -152,7 +155,17 @@ public class Javascript extends AppCompatActivity {
 
     public void ClickCondividi(View view) {
         //Redirect activity to Condividi
-        redirectActivity(this,Condividi.class );
+        //redirectActivity(this,Condividi.class );
+        try {
+            Intent intent = new Intent(Intent.ACTION_SEND);
+            intent.setType("text/plain");
+            intent.putExtra(Intent.EXTRA_SUBJECT, "Easy Learn - la strada per il tuo futuro nell'ICT");
+            String share_msg = "https://play.google.com/store/apps/details?id=" + BuildConfig.APPLICATION_ID + "\n\n";
+            intent.putExtra(Intent.EXTRA_TEXT, share_msg);
+            startActivity(Intent.createChooser(intent, "Condividi tramite:"));
+        }catch (Exception e){
+            Toasty.error(Javascript.this,"Errore condivisione", Toast.LENGTH_LONG).show();
+        }
     }
 
 
