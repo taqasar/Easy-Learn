@@ -69,4 +69,11 @@
     <string name="_39">+39</string>
     <string name="aggiorna_i_miei_dati">Aggiorna i miei dati</string>
     <string name="ecco_i_dati_del_tuo_profilo">Ecco i dati del tuo profilo</string>
+    <string name="walayatt08_gmail_com">walayatt08@gmail.com</string>
+    <string name="taqasar_walayat">Taqasar Walayat</string>
+    <string name="nome_completo">Nome completo</string>
+    <string name="e_mail">E-mail</string>
+    <string name="role">Ruolo</string>
+    <string name="tel">Telefono</string>
+    <string name="sex">Sesso</string>
 </resources>

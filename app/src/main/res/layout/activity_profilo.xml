@@ -23,6 +23,179 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
+            <Button
+                android:id="@+id/modifica_dati"
+                android:layout_width="200dp"
+                android:layout_height="40dp"
+                android:background="@drawable/button_bkg"
+                android:fontFamily="@font/sf_ui_display_medium"
+                android:text="Modifica i miei dati"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="17sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.497"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.874" />
+
+            <EditText
+                android:id="@+id/show_sex"
+                android:layout_width="301dp"
+                android:layout_height="43dp"
+                android:background="@drawable/input_fields"
+                android:ems="10"
+                android:importantForAutofill="no"
+                android:inputType="text"
+                android:paddingStart="20dp"
+                android:textColor="#474747"
+                android:textColorHint="#E6474747"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.784" />
+
+            <TextView
+                android:id="@+id/tel_title16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/sf_ui_display_medium"
+                android:text="@string/nome_completo"
+                android:textColor="#FF0092"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.18"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.274" />
+
+            <TextView
+                android:id="@+id/tel_title15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/sf_ui_display_medium"
+                android:text="@string/e_mail"
+                android:textColor="#FF0092"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.15"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.387" />
+
+            <TextView
+                android:id="@+id/tel_title13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/sf_ui_display_medium"
+                android:text="@string/role"
+                android:textColor="#FF0092"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.151"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.612" />
+
+            <TextView
+                android:id="@+id/tel_title12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/sf_ui_display_medium"
+                android:text="@string/tel"
+                android:textColor="#FF0092"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.16"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.499" />
+
+            <EditText
+                android:id="@+id/show_nome"
+                android:layout_width="301dp"
+                android:layout_height="43dp"
+                android:background="@drawable/input_fields"
+                android:ems="10"
+                android:importantForAutofill="no"
+                android:inputType="text"
+                android:paddingStart="20dp"
+                android:textColor="#474747"
+                android:textColorHint="#E6474747"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.325" />
+
+            <EditText
+                android:id="@+id/show_mail"
+                android:layout_width="301dp"
+                android:layout_height="43dp"
+                android:background="@drawable/input_fields"
+                android:ems="10"
+                android:importantForAutofill="no"
+                android:inputType="text"
+                android:paddingStart="20dp"
+                android:textColor="#474747"
+                android:textColorHint="#E6474747"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.437" />
+
+            <EditText
+                android:id="@+id/show_tel"
+                android:layout_width="301dp"
+                android:layout_height="43dp"
+                android:background="@drawable/input_fields"
+                android:ems="10"
+                android:importantForAutofill="no"
+                android:inputType="number"
+                android:paddingStart="20dp"
+                android:textColor="#474747"
+                android:textColorHint="#E6474747"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.556" />
+
+            <EditText
+                android:id="@+id/show_role"
+                android:layout_width="301dp"
+                android:layout_height="43dp"
+                android:background="@drawable/input_fields"
+                android:ems="10"
+                android:importantForAutofill="no"
+                android:inputType="text"
+                android:paddingStart="20dp"
+                android:textColor="#474747"
+                android:textColorHint="#E6474747"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.67" />
+
+            <TextView
+                android:id="@+id/tel_title14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/sf_ui_display_medium"
+                android:text="@string/sex"
+                android:textColor="#FF0092"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.152"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.722" />
+
             <View
                 android:id="@+id/view5"
                 android:layout_width="wrap_content"
@@ -31,7 +204,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.293" />
+                app:layout_constraintVertical_bias="0.251" />
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/profile_image2"
@@ -44,7 +217,7 @@
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.095" />
+                app:layout_constraintVertical_bias="0.051" />
 
             <com.google.android.material.bottomnavigation.BottomNavigationView
                 android:id="@+id/bottom_navigation"
@@ -75,14 +248,14 @@
                 app:layout_constraintHorizontal_bias="0.096"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.023" />
+                app:layout_constraintVertical_bias="0.005" />
 
             <TextView
                 android:id="@+id/mail_main"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/sf_ui_display_light"
-                android:text="walayatt08@gmail.com"
+                android:text="@string/walayatt08_gmail_com"
                 android:textColor="#474747"
                 android:textSize="17sp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -90,14 +263,14 @@
                 app:layout_constraintHorizontal_bias="0.735"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.189" />
+                app:layout_constraintVertical_bias="0.146" />
 
             <TextView
                 android:id="@+id/nome_main"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/sf_ui_display_semibold"
-                android:text="Taqasar Walayat"
+                android:text="@string/taqasar_walayat"
                 android:textColor="#474747"
                 android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -105,7 +278,7 @@
                 app:layout_constraintHorizontal_bias="0.713"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.14" />
+                app:layout_constraintVertical_bias="0.098" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

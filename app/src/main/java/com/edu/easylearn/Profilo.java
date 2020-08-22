@@ -15,6 +15,8 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -52,6 +54,17 @@ public class Profilo extends AppCompatActivity {
     private TextView logout_txt;
     private TextView nome_prof;
     private TextView mail_prof;
+
+    private EditText nome;
+    private EditText mail;
+    private EditText tel;
+    private EditText ruolo;
+    private EditText sesso;
+
+    private TextView main_nome;
+    private TextView main_mail;
+
+    private Button modifica_dati;
 
     private CircleImageView img_prof;
     private Uri img_uri;
@@ -156,6 +169,62 @@ public class Profilo extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 choosePic();
+            }
+        });
+
+        nome = findViewById(R.id.show_nome);
+        mail = findViewById(R.id.show_mail);
+        tel = findViewById(R.id.show_tel);
+        ruolo = findViewById(R.id.show_role);
+        sesso = findViewById(R.id.show_sex);
+
+        modifica_dati = findViewById(R.id.modifica_dati);
+
+        nome.setEnabled(false);
+        mail.setEnabled(false);
+        tel.setEnabled(false);
+        ruolo.setEnabled(false);
+        sesso.setEnabled(false);
+
+        main_nome = findViewById(R.id.nome_main);
+        main_mail = findViewById(R.id.mail_main);
+
+        show_user_info_read_only();
+
+        modifica_dati.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Profilo.this,Impostazioni.class));
+            }
+        });
+    }
+
+    private void show_user_info_read_only(){
+        String id = auth.getCurrentUser().getUid();
+        mDatabase.child("Utenti").child(id).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if(snapshot.exists()){
+                    String name = snapshot.child("nome").getValue().toString();
+                    String email = snapshot.child("e-mail").getValue().toString();
+                    String telefono = snapshot.child("telefono").getValue().toString();
+                    String role = snapshot.child("ruolo").getValue().toString();
+                    String sex = snapshot.child("sesso").getValue().toString();
+
+                    nome.setText(name);
+                    mail.setText(email);
+                    tel.setText(telefono);
+                    ruolo.setText(role);
+                    sesso.setText(sex);
+
+                    main_nome.setText(name);
+                    main_mail.setText(email);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                //...
             }
         });
     }
