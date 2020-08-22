@@ -62,4 +62,10 @@
     <string name="siamo_reperibili_24_7_ai_seguenti_indirizzi_email_nwalayat_gmail_com_e_alfonzim_gmail_com">Siamo reperibili 24/7 ai seguenti indirizzi email:\nwalayat@gmail.com e alfonzim@gmail.com</string>
     <string name="questa_applicazione_stata_sviluppata_pensando_na_quelle_persone_che_vogliono_approcciarsi_nal_mondo_dell_informatica_partenzo_da_zero_nquesta_app_stata_fatta_su_misura_per_chi_non_nha_nessun_tipo_di_esperienza_pregressa_in_nquesto_campo_e_vuole_avere_un_primo_contatto_n_soft_con_la_disciplina">Questa applicazione è stata sviluppata pensando\na quelle persone che vogliono approcciarsi\nal mondo dell\'informatica partenzo da zero.\nQuesta app è stata fatta su misura per chi non\nha nessun tipo di esperienza pregressa in\nquesto campo e vuole avere un primo contatto\n\'soft\' con la disciplina.</string>
     <string name="ecco_una_lista_di_compilatori_ed_ninterpreti_online_con_i_quali_esercitarti_e_nmigliorare_le_tue_capacit_pratiche">Ecco una lista di compilatori ed\ninterpreti online con i quali esercitarti e\nmigliorare le tue capacità pratiche</string>
+    <string name="modifica_immagine_di_profilo">Modifica immagine di profilo</string>
+    <string name="ruolo">ruolo</string>
+    <string name="sesso">sesso</string>
+    <string name="telefono">telefono</string>
+    <string name="_39">+39</string>
+    <string name="aggiorna_i_miei_dati">Aggiorna i miei dati</string>
 </resources>

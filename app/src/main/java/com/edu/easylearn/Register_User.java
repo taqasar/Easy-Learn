@@ -55,6 +55,9 @@ public class Register_User extends AppCompatActivity {
     private String name_s = "";
     private String mail_s = "";
     private String pwd_s = "";
+    private String num_s = "";
+    private String ruolo_s = "";
+    private String sesso_s = "";
 
     private FirebaseAuth Auth;
     private DatabaseReference db_ref;
@@ -150,6 +153,9 @@ public class Register_User extends AppCompatActivity {
                     map.put("nome",name_s);
                     map.put("e-mail",mail_s);
                     map.put("password",pwd_s);
+                    map.put("telefono",num_s);
+                    map.put("ruolo",ruolo_s);
+                    map.put("sesso",sesso_s);
 
                     String id = Auth.getCurrentUser().getUid();
 
