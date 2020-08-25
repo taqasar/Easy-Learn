@@ -101,5 +101,7 @@
     <string name="termina">Termina</string>
     <string name="score_txt">Hai risposto a 11 domande\ncorrettamente e 4 errate!</string>
     <string name="indietro">TODO</string>
+    <string name="progress">TextView</string>
+    <string name="carico_le_domande">Carico le domande...</string>
 
 </resources>

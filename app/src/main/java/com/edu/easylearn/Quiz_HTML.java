@@ -10,6 +10,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import android.animation.Animator;
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -24,6 +25,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.animation.DecelerateInterpolator;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -44,6 +46,9 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
@@ -80,7 +85,8 @@ public class Quiz_HTML extends AppCompatActivity implements View.OnClickListener
     private int quesNum;
     private int correct;
     private int wrong;
-
+    private FirebaseFirestore firestore;
+    private Dialog loadingDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -91,6 +97,15 @@ public class Quiz_HTML extends AppCompatActivity implements View.OnClickListener
 
         correct = 0;
         wrong = 0;
+
+        firestore = FirebaseFirestore.getInstance();
+
+        loadingDialog = new Dialog(Quiz_HTML.this);
+        loadingDialog.setContentView(R.layout.loading_progress_bar);
+        loadingDialog.setCancelable(false);
+        loadingDialog.getWindow().setBackgroundDrawableResource(R.drawable.progress_background);
+        loadingDialog.getWindow().setLayout(ViewGroup.LayoutParams.WRAP_CONTENT,ViewGroup.LayoutParams.WRAP_CONTENT);
+        loadingDialog.show();
 
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestEmail()
@@ -212,13 +227,37 @@ public class Quiz_HTML extends AppCompatActivity implements View.OnClickListener
 
     private void getQuestionList(){
         questionsList = new ArrayList<>();
-        questionsList.add(new Questions("Domanda numero 1?","A","B","C","D",2));
-        questionsList.add(new Questions("Domanda numero 2?","B","C","D","A",2));
-        questionsList.add(new Questions("Domanda numero 3?","C","A","B","D",2));
-        questionsList.add(new Questions("Domanda numero 4?","A","B","C","D",2));
-        questionsList.add(new Questions("Domanda numero 5?","D","B","C","A",2));
 
-        setQuestion();
+        firestore.collection("QUIZ").document("CAT_1")
+                .collection("HTML").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                if(task.isSuccessful()){
+                    QuerySnapshot questions = task.getResult();
+                    for(QueryDocumentSnapshot doc : questions){
+                        questionsList.add(new Questions(doc.getString("QUESTION"),
+                                doc.getString("A"),
+                                doc.getString("B"),
+                                doc.getString("C"),
+                                doc.getString("D"),
+                                Integer.valueOf(doc.getString("ANSWER"))
+                        ));
+                    }
+                    setQuestion();
+
+                }else{
+                    Toasty.error(Quiz_HTML.this,"Errore nel caricamento delle domande...",Toast.LENGTH_LONG).show();
+                }
+
+                Handler hndl = new Handler();
+                hndl.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        loadingDialog.cancel();
+                    }
+                },1100);
+            }
+        });
     }
 
     private void setQuestion(){

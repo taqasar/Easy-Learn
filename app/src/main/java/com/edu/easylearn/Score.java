@@ -216,6 +216,8 @@ public class Score extends AppCompatActivity {
             score.setText("Hai risposto a " + String.valueOf(score_string_1) + " domande\ncorrettamente e " + String.valueOf(score_string_2) + " errata!");
         }else if(score_int_1 == 1 && score_int_2 > 1){
             score.setText("Hai risposto a " + String.valueOf(score_string_1) + " domanda\ncorrettamente e " + String.valueOf(score_string_2) + " errate!");
+        }else{
+            score.setText("Hai risposto a " + String.valueOf(score_string_1) + " domande\ncorrettamente e " + String.valueOf(score_string_2) + " errate!");
         }
     }
 
