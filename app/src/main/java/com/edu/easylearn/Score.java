@@ -13,9 +13,9 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -44,7 +44,7 @@ import java.util.UUID;
 import de.hdodenhof.circleimageview.CircleImageView;
 import es.dmoral.toasty.Toasty;
 
-public class Quiz extends AppCompatActivity {
+public class Score extends AppCompatActivity {
 
     DrawerLayout drawerLayout;
 
@@ -52,25 +52,25 @@ public class Quiz extends AppCompatActivity {
     private TextView logout_txt;
     private TextView nome_prof;
     private TextView mail_prof;
-
-    private ImageView web;
-    private ImageView db;
-    private ImageView mobile;
-    private ImageView algo;
-
     private CircleImageView img_prof;
     private Uri img_uri;
     private FirebaseStorage storage;
     private StorageReference storageReference;
-
     private GoogleSignInClient mGoogleSignInClient;
     private FirebaseAuth auth;
     private DatabaseReference mDatabase;
 
+    private TextView score;
+    private Button riprova;
+    private Button corso;
+    private Button termina;
+    private ImageView back;
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_quiz);
+        setContentView(R.layout.activity_score);
+
         getSupportActionBar().hide();
 
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
@@ -81,7 +81,7 @@ public class Quiz extends AppCompatActivity {
         //Initialize and Assign Variable
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
 
-        //Set Quiz Selected
+        //Set Cerca Selected
         bottomNavigationView.setSelectedItemId(R.id.quiz);
 
         //Perform ItemSelectedListener
@@ -95,6 +95,9 @@ public class Quiz extends AppCompatActivity {
                         return true;
 
                     case R.id.quiz:
+
+                        startActivity(new Intent(getApplicationContext(), Quiz.class));
+                        overridePendingTransition(0, 0);
                         return true;
 
                     case R.id.cerca:
@@ -129,8 +132,8 @@ public class Quiz extends AppCompatActivity {
                         signOut();
                         break;
                 }
-                Toasty.success(Quiz.this,"Sign out effettuato", Toast.LENGTH_LONG).show();
-                startActivity(new Intent(Quiz.this,Login.class));
+                Toasty.success(Score.this,"Sign out effettuato", Toast.LENGTH_LONG).show();
+                startActivity(new Intent(Score.this,Login.class));
             }
         });
 
@@ -143,8 +146,8 @@ public class Quiz extends AppCompatActivity {
                         signOut();
                         break;
                 }
-                Toasty.success(Quiz.this,"Sign out effettuato", Toast.LENGTH_LONG).show();
-                startActivity(new Intent(Quiz.this,Login.class));
+                Toasty.success(Score.this,"Sign out effettuato", Toast.LENGTH_LONG).show();
+                startActivity(new Intent(Score.this,Login.class));
             }
         });
 
@@ -164,39 +167,59 @@ public class Quiz extends AppCompatActivity {
             }
         });
 
-        web = findViewById(R.id.cat_web);
-        db = findViewById(R.id.cat_db);
-        mobile = findViewById(R.id.cat_mobile);
-        algo = findViewById(R.id.cat_algo);
+        score = findViewById(R.id.score_txt);
 
-        web.setOnClickListener(new View.OnClickListener() {
+        riprova = findViewById(R.id.riprova_quiz);
+        corso = findViewById(R.id.leggi_corso);
+        termina = findViewById(R.id.termina);
+        back = findViewById(R.id.indietro);
+
+        riprova.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Quiz.this,Quiz_Web.class));
+                startActivity(new Intent(Score.this,Quiz_HTML.class));
             }
         });
 
-        db.setOnClickListener(new View.OnClickListener() {
+        corso.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Quiz.this,Quiz_Db.class));
+                startActivity(new Intent(Score.this,HTML5.class));
             }
         });
 
-        mobile.setOnClickListener(new View.OnClickListener() {
+        termina.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Quiz.this,Quiz_Mobile.class));
+                startActivity(new Intent(Score.this,Quiz_Web.class));
             }
         });
 
-        algo.setOnClickListener(new View.OnClickListener() {
+        back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Quiz.this,Quiz_Algo.class));
+                startActivity(new Intent(Score.this,Quiz_Web.class));
             }
         });
+
+        String score_string_1 = getIntent().getStringExtra("SCORE_RIGHT");
+        String score_string_2 = getIntent().getStringExtra("SCORE_WRONG");
+
+        int score_int_1 = Integer.parseInt(score_string_1);
+        int score_int_2 = Integer.parseInt(score_string_2);
+
+        if(score_int_1 > 1 && score_int_2 > 1){
+            score.setText("Hai risposto a " + String.valueOf(score_string_1) + " domande\ncorrettamente e " + String.valueOf(score_string_2) + " errate!");
+        }else if(score_int_1 == 1 && score_int_2 == 1){
+            score.setText("Hai risposto a " + String.valueOf(score_string_1) + " domanda\ncorrettamente e " + String.valueOf(score_string_2) + " errata!");
+        }else if(score_int_1 > 1 && score_int_2 == 1){
+            score.setText("Hai risposto a " + String.valueOf(score_string_1) + " domande\ncorrettamente e " + String.valueOf(score_string_2) + " errata!");
+        }else if(score_int_1 == 1 && score_int_2 > 1){
+            score.setText("Hai risposto a " + String.valueOf(score_string_1) + " domanda\ncorrettamente e " + String.valueOf(score_string_2) + " errate!");
+        }
     }
+
+
 
     private void choosePic(){
         Intent gallery_intent = new Intent();
@@ -231,7 +254,7 @@ public class Quiz extends AppCompatActivity {
                     public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                         // Get a URL to the uploaded content
                         pd.dismiss();
-                        Toasty.success(Quiz.this,"Foto caricata", Toast.LENGTH_LONG).show();
+                        Toasty.success(Score.this,"Foto caricata", Toast.LENGTH_LONG).show();
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {
@@ -239,7 +262,7 @@ public class Quiz extends AppCompatActivity {
                     public void onFailure(@NonNull Exception exception) {
                         // Handle unsuccessful uploads
                         pd.dismiss();
-                        Toasty.error(Quiz.this,"Foto non caricata",Toast.LENGTH_LONG).show();
+                        Toasty.error(Score.this,"Foto non caricata",Toast.LENGTH_LONG).show();
                     }
                 }).addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
             @Override
@@ -276,7 +299,7 @@ public class Quiz extends AppCompatActivity {
                 .addOnCompleteListener(this, new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
-                        Toasty.success(Quiz.this,"Sign out effettuato", Toast.LENGTH_LONG).show();
+                        Toasty.success(Score.this,"Sign out effettuato", Toast.LENGTH_LONG).show();
                         finish();
                     }
                 });
@@ -294,7 +317,7 @@ public class Quiz extends AppCompatActivity {
 
     public void ClickLogo(View view) {
         //Close drawer
-        startActivity(new Intent(Quiz.this,Home.class));
+        startActivity(new Intent(Score.this,Home.class));
 
     }
 
@@ -322,6 +345,7 @@ public class Quiz extends AppCompatActivity {
     public void ClickProfilo(View view) {
         //Redirect activity to Profilo
         redirectActivity(this, Profilo.class);
+
     }
 
     public void ClickCorsiSalvati(View view) {
@@ -356,7 +380,7 @@ public class Quiz extends AppCompatActivity {
             intent.putExtra(Intent.EXTRA_TEXT, share_msg);
             startActivity(Intent.createChooser(intent, "Condividi tramite:"));
         }catch (Exception e){
-            Toasty.error(Quiz.this,"Errore condivisione",Toast.LENGTH_LONG).show();
+            Toasty.error(Score.this,"Errore condivisione",Toast.LENGTH_LONG).show();
         }
     }
 

@@ -6,7 +6,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Quiz"
+    tools:context=".Score"
     android:id="@+id/drawer_layout">
 
 
@@ -23,57 +23,68 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <ImageView
-                android:id="@+id/cat_db"
-                android:layout_width="143dp"
-                android:layout_height="141dp"
-                android:contentDescription="@string/macro_db"
+            <Button
+                android:id="@+id/termina"
+                android:layout_width="200dp"
+                android:layout_height="40dp"
+                android:background="@drawable/button_bkg"
+                android:fontFamily="@font/sf_ui_display_medium"
+                android:text="@string/termina"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.836"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.164"
-                app:srcCompat="@drawable/macro_db" />
+                app:layout_constraintVertical_bias="0.807" />
+
+            <Button
+                android:id="@+id/riprova_quiz"
+                android:layout_width="200dp"
+                android:layout_height="40dp"
+                android:background="@drawable/button_bkg"
+                android:fontFamily="@font/sf_ui_display_medium"
+                android:text="@string/riprova_il_quiz"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.593" />
+
+            <Button
+                android:id="@+id/leggi_corso"
+                android:layout_width="200dp"
+                android:layout_height="40dp"
+                android:background="@drawable/button_bkg"
+                android:fontFamily="@font/sf_ui_display_medium"
+                android:text="@string/leggi_corso"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="17sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.7" />
 
             <ImageView
-                android:id="@+id/cat_web"
-                android:layout_width="138dp"
-                android:layout_height="140dp"
-                android:contentDescription="@string/macro_web"
+                android:id="@+id/score_bkg"
+                android:layout_width="353dp"
+                android:layout_height="171dp"
+                android:contentDescription="@string/quiz_back"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.16"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.165"
-                app:srcCompat="@drawable/macro_web" />
-
-            <ImageView
-                android:id="@+id/cat_mobile"
-                android:layout_width="138dp"
-                android:layout_height="140dp"
-                android:contentDescription="@string/macro_mobile"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.16"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.48"
-                app:srcCompat="@drawable/macro_mobile" />
-
-            <ImageView
-                android:id="@+id/cat_algo"
-                android:layout_width="138dp"
-                android:layout_height="140dp"
-                android:contentDescription="@string/macro_algo"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.815"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.481"
-                app:srcCompat="@drawable/macro_algo" />
+                app:layout_constraintVertical_bias="0.313"
+                app:srcCompat="@drawable/quiz_bkg" />
 
             <com.google.android.material.bottomnavigation.BottomNavigationView
                 android:id="@+id/bottom_navigation"
@@ -91,37 +102,44 @@
                 app:layout_constraintVertical_bias="1.0"
                 app:menu="@menu/menu_navigation" />
 
+            <ImageView
+                android:id="@+id/win_img"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/win_umg"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.022"
+                app:srcCompat="@drawable/win" />
+
             <TextView
-                android:id="@+id/cat_title"
+                android:id="@+id/score_txt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/sf_ui_display_bold"
-                android:text="@string/seleziona_la_categoria_dell_argomento_nsul_quale_vuoi_esercitarti"
-                android:textColor="#474747"
-                android:textSize="20sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.488"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.023" />
+                android:text="@string/score_txt"
+                android:textColor="#FF0092"
+                android:textSize="23sp"
+                app:layout_constraintBottom_toBottomOf="@+id/score_bkg"
+                app:layout_constraintEnd_toEndOf="@+id/score_bkg"
+                app:layout_constraintStart_toStartOf="@+id/score_bkg"
+                app:layout_constraintTop_toTopOf="@+id/score_bkg"
+                app:layout_constraintVertical_bias="0.508" />
 
-            <TextView
-                android:id="@+id/cat_txt"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/sf_ui_display_medium"
-                android:paddingLeft="25dp"
-                android:paddingRight="25dp"
-                android:text="@string/una_volta_scelta_la_categoria_dell_argomento_nverrai_riportato_sull_argomento_specifico_nel_nquale_esercitarti_con_il_nostro_quiz_n_nquesti_quiz_sono_stati_fatti_appositamenti_per_ntestare_le_proprie_nozioni_teoriche_ad_un_livello_di_difficolt_molto_basso"
-                android:textColor="#474747"
-                android:textSize="17sp"
+            <ImageView
+                android:id="@+id/indietro"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintHorizontal_bias="0.09"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.814" />
+                app:layout_constraintVertical_bias="0.04000002"
+                app:srcCompat="@drawable/back_arrow"
+                android:contentDescription="@string/indietro" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

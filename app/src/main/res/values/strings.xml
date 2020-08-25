@@ -76,4 +76,30 @@
     <string name="role">Ruolo</string>
     <string name="tel">Telefono</string>
     <string name="sex">Sesso</string>
+    <string name="seleziona_la_categoria_dell_argomento_nsul_quale_vuoi_esercitarti">Seleziona la categoria dell\'argomento\nsul quale vuoi esercitarti</string>
+    <string name="una_volta_scelta_la_categoria_dell_argomento_nverrai_riportato_sull_argomento_specifico_nel_nquale_esercitarti_con_il_nostro_quiz_n_nquesti_quiz_sono_stati_fatti_appositamenti_per_ntestare_le_proprie_nozioni_teoriche_ad_un_livello_di_difficolt_molto_basso">Una volta scelta la categoria dell\'argomento,\nverrai riportato sull\'argomento specifico nel\nquale esercitarti con il nostro quiz.\n\nQuesti quiz sono stati fatti appositamenti per\ntestare le proprie nozioni teoriche ad un livello di difficoltà molto basso.</string>
+    <string name="todo">TODO</string>
+    <string name="seleziona_un_argomento_per_cominciare_nil_quiz">Seleziona un argomento per cominciare\nil quiz:</string>
+    <string name="database">Database</string>
+
+    <string name="sviluppo_mobile">Sviluppo Mobile</string>
+    <string name="sviluppo_web">Sviluppo Web</string>
+    <string name="algoritmi_e_strutture_dati">Algoritmi e Strutture Dati</string>
+    <string name="aq3">TODO</string>
+    <string name="num_of_quiz">1/15</string>
+    <string name="quiz_back">TODO</string>
+    <string name="question">Qua ci va la domanda del quiz?</string>
+    <string name="option_q">Opzione 1</string>
+    <string name="option_1">Opzione 1</string>
+    <string name="quiz_sub">Seleziona la risposta opportuna</string>
+    <string name="option_4">Opzione 4</string>
+    <string name="option_3">Opzione 3</string>
+    <string name="option_2">Opzione 2</string>
+    <string name="win_umg">TODO</string>
+    <string name="riprova_il_quiz">Riprova il Quiz</string>
+    <string name="leggi_corso">Leggi il corso di HTML 5</string>
+    <string name="termina">Termina</string>
+    <string name="score_txt">Hai risposto a 11 domande\ncorrettamente e 4 errate!</string>
+    <string name="indietro">TODO</string>
+
 </resources>

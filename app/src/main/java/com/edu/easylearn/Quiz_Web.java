@@ -13,7 +13,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
@@ -44,7 +43,7 @@ import java.util.UUID;
 import de.hdodenhof.circleimageview.CircleImageView;
 import es.dmoral.toasty.Toasty;
 
-public class Quiz extends AppCompatActivity {
+public class Quiz_Web extends AppCompatActivity {
 
     DrawerLayout drawerLayout;
 
@@ -52,25 +51,22 @@ public class Quiz extends AppCompatActivity {
     private TextView logout_txt;
     private TextView nome_prof;
     private TextView mail_prof;
-
-    private ImageView web;
-    private ImageView db;
-    private ImageView mobile;
-    private ImageView algo;
-
     private CircleImageView img_prof;
     private Uri img_uri;
     private FirebaseStorage storage;
     private StorageReference storageReference;
-
     private GoogleSignInClient mGoogleSignInClient;
     private FirebaseAuth auth;
     private DatabaseReference mDatabase;
 
+    private ImageView back;
+    private ImageView html;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_quiz);
+        setContentView(R.layout.activity_quiz__web);
+
         getSupportActionBar().hide();
 
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
@@ -81,7 +77,7 @@ public class Quiz extends AppCompatActivity {
         //Initialize and Assign Variable
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
 
-        //Set Quiz Selected
+        //Set Cerca Selected
         bottomNavigationView.setSelectedItemId(R.id.quiz);
 
         //Perform ItemSelectedListener
@@ -95,6 +91,9 @@ public class Quiz extends AppCompatActivity {
                         return true;
 
                     case R.id.quiz:
+
+                        startActivity(new Intent(getApplicationContext(), Quiz.class));
+                        overridePendingTransition(0, 0);
                         return true;
 
                     case R.id.cerca:
@@ -129,8 +128,8 @@ public class Quiz extends AppCompatActivity {
                         signOut();
                         break;
                 }
-                Toasty.success(Quiz.this,"Sign out effettuato", Toast.LENGTH_LONG).show();
-                startActivity(new Intent(Quiz.this,Login.class));
+                Toasty.success(Quiz_Web.this,"Sign out effettuato", Toast.LENGTH_LONG).show();
+                startActivity(new Intent(Quiz_Web.this,Login.class));
             }
         });
 
@@ -143,8 +142,8 @@ public class Quiz extends AppCompatActivity {
                         signOut();
                         break;
                 }
-                Toasty.success(Quiz.this,"Sign out effettuato", Toast.LENGTH_LONG).show();
-                startActivity(new Intent(Quiz.this,Login.class));
+                Toasty.success(Quiz_Web.this,"Sign out effettuato", Toast.LENGTH_LONG).show();
+                startActivity(new Intent(Quiz_Web.this,Login.class));
             }
         });
 
@@ -164,36 +163,20 @@ public class Quiz extends AppCompatActivity {
             }
         });
 
-        web = findViewById(R.id.cat_web);
-        db = findViewById(R.id.cat_db);
-        mobile = findViewById(R.id.cat_mobile);
-        algo = findViewById(R.id.cat_algo);
-
-        web.setOnClickListener(new View.OnClickListener() {
+        back = findViewById(R.id.back_to_cat);
+        back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Quiz.this,Quiz_Web.class));
+                startActivity(new Intent(Quiz_Web.this,Quiz.class));
             }
         });
 
-        db.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(Quiz.this,Quiz_Db.class));
-            }
-        });
+        html = findViewById(R.id.html_quiz);
 
-        mobile.setOnClickListener(new View.OnClickListener() {
+        html.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Quiz.this,Quiz_Mobile.class));
-            }
-        });
-
-        algo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(Quiz.this,Quiz_Algo.class));
+                startActivity(new Intent(Quiz_Web.this,Quiz_HTML.class));
             }
         });
     }
@@ -231,7 +214,7 @@ public class Quiz extends AppCompatActivity {
                     public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                         // Get a URL to the uploaded content
                         pd.dismiss();
-                        Toasty.success(Quiz.this,"Foto caricata", Toast.LENGTH_LONG).show();
+                        Toasty.success(Quiz_Web.this,"Foto caricata", Toast.LENGTH_LONG).show();
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {
@@ -239,7 +222,7 @@ public class Quiz extends AppCompatActivity {
                     public void onFailure(@NonNull Exception exception) {
                         // Handle unsuccessful uploads
                         pd.dismiss();
-                        Toasty.error(Quiz.this,"Foto non caricata",Toast.LENGTH_LONG).show();
+                        Toasty.error(Quiz_Web.this,"Foto non caricata",Toast.LENGTH_LONG).show();
                     }
                 }).addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
             @Override
@@ -276,7 +259,7 @@ public class Quiz extends AppCompatActivity {
                 .addOnCompleteListener(this, new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
-                        Toasty.success(Quiz.this,"Sign out effettuato", Toast.LENGTH_LONG).show();
+                        Toasty.success(Quiz_Web.this,"Sign out effettuato", Toast.LENGTH_LONG).show();
                         finish();
                     }
                 });
@@ -294,7 +277,7 @@ public class Quiz extends AppCompatActivity {
 
     public void ClickLogo(View view) {
         //Close drawer
-        startActivity(new Intent(Quiz.this,Home.class));
+        startActivity(new Intent(Quiz_Web.this,Home.class));
 
     }
 
@@ -322,6 +305,7 @@ public class Quiz extends AppCompatActivity {
     public void ClickProfilo(View view) {
         //Redirect activity to Profilo
         redirectActivity(this, Profilo.class);
+
     }
 
     public void ClickCorsiSalvati(View view) {
@@ -356,7 +340,7 @@ public class Quiz extends AppCompatActivity {
             intent.putExtra(Intent.EXTRA_TEXT, share_msg);
             startActivity(Intent.createChooser(intent, "Condividi tramite:"));
         }catch (Exception e){
-            Toasty.error(Quiz.this,"Errore condivisione",Toast.LENGTH_LONG).show();
+            Toasty.error(Quiz_Web.this,"Errore condivisione",Toast.LENGTH_LONG).show();
         }
     }
 
