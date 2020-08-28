@@ -15,6 +15,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -43,7 +44,7 @@ import java.util.UUID;
 import de.hdodenhof.circleimageview.CircleImageView;
 import es.dmoral.toasty.Toasty;
 
-public class Quiz_Web extends AppCompatActivity {
+public class Score_JS extends AppCompatActivity {
 
     DrawerLayout drawerLayout;
 
@@ -59,20 +60,19 @@ public class Quiz_Web extends AppCompatActivity {
     private FirebaseAuth auth;
     private DatabaseReference mDatabase;
 
+    private TextView score;
+    private Button riprova;
+    private Button corso;
+    private Button termina;
     private ImageView back;
-    private ImageView html;
-    private ImageView css;
-    private ImageView js;
-    private ImageView node;
-    private ImageView react;
-    private ImageView angular;
-
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_quiz__web);
-
+        setContentView(R.layout.activity_score__j_s);
+        
         getSupportActionBar().hide();
+
 
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestEmail()
@@ -89,7 +89,7 @@ public class Quiz_Web extends AppCompatActivity {
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-                switch (menuItem.getItemId()) {
+                switch ( menuItem.getItemId()) {
                     case R.id.home:
                         startActivity(new Intent(getApplicationContext(), Home.class));
                         overridePendingTransition(0, 0);
@@ -133,8 +133,8 @@ public class Quiz_Web extends AppCompatActivity {
                         signOut();
                         break;
                 }
-                Toasty.success(Quiz_Web.this, "Sign out effettuato", Toast.LENGTH_LONG).show();
-                startActivity(new Intent(Quiz_Web.this, Login.class));
+                Toasty.success(Score_JS.this,"Sign out effettuato", Toast.LENGTH_LONG).show();
+                startActivity(new Intent(Score_JS.this,Login.class));
             }
         });
 
@@ -147,8 +147,8 @@ public class Quiz_Web extends AppCompatActivity {
                         signOut();
                         break;
                 }
-                Toasty.success(Quiz_Web.this, "Sign out effettuato", Toast.LENGTH_LONG).show();
-                startActivity(new Intent(Quiz_Web.this, Login.class));
+                Toasty.success(Score_JS.this,"Sign out effettuato", Toast.LENGTH_LONG).show();
+                startActivity(new Intent(Score_JS.this,Login.class));
             }
         });
 
@@ -168,84 +168,82 @@ public class Quiz_Web extends AppCompatActivity {
             }
         });
 
-        back = findViewById(R.id.back_to_cat);
+        score = findViewById(R.id.score_txt);
+
+        riprova = findViewById(R.id.riprova_quiz);
+        corso = findViewById(R.id.leggi_corso);
+        termina = findViewById(R.id.termina);
+        back = findViewById(R.id.indietro);
+
+        riprova.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Score_JS.this,Quiz_JS.class));
+            }
+        });
+
+        corso.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Score_JS.this,Javascript.class));
+            }
+        });
+
+        termina.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Score_JS.this,Quiz_Web.class));
+            }
+        });
+
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Quiz_Web.this, Quiz.class));
+                startActivity(new Intent(Score_JS.this,Quiz_Web.class));
             }
         });
 
-        html = findViewById(R.id.html_quiz);
+        String score_string_1 = getIntent().getStringExtra("SCORE_RIGHT");
+        String score_string_2 = getIntent().getStringExtra("SCORE_WRONG");
 
-        html.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(Quiz_Web.this, Quiz_HTML.class));
-            }
-        });
+        int score_int_1 = Integer.parseInt(score_string_1);
+        int score_int_2 = Integer.parseInt(score_string_2);
 
-        css = findViewById(R.id.css_quiz);
-        js = findViewById(R.id.js_quiz);
-        node = findViewById(R.id.node_quiz);
-        react = findViewById(R.id.react_quiz);
-        angular = findViewById(R.id.angular_quiz);
-
-        css.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(Quiz_Web.this, Quiz_CSS.class));
-            }
-        });
-
-        js.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(Quiz_Web.this, Quiz_JS.class));
-            }
-        });
-
-        node.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(Quiz_Web.this, Quiz_Node.class));
-            }
-        });
-
-        react.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(Quiz_Web.this, Quiz_React.class));
-            }
-        });
-
-        angular.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(Quiz_Web.this, Quiz_Angular.class));
-            }
-        });
+        if(score_int_1 > 1 && score_int_2 > 1){
+            score.setText("Hai risposto a " + String.valueOf(score_string_1) + " domande\ncorrettamente e " + String.valueOf(score_string_2) + " errate!");
+        }else if(score_int_1 == 1 && score_int_2 == 1){
+            score.setText("Hai risposto a " + String.valueOf(score_string_1) + " domanda\ncorrettamente e " + String.valueOf(score_string_2) + " errata!");
+        }else if(score_int_1 > 1 && score_int_2 == 1){
+            score.setText("Hai risposto a " + String.valueOf(score_string_1) + " domande\ncorrettamente e " + String.valueOf(score_string_2) + " errata!");
+        }else if(score_int_1 == 1 && score_int_2 > 1){
+            score.setText("Hai risposto a " + String.valueOf(score_string_1) + " domanda\ncorrettamente e " + String.valueOf(score_string_2) + " errate!");
+        }else{
+            score.setText("Hai risposto a " + String.valueOf(score_string_1) + " domande\ncorrettamente e " + String.valueOf(score_string_2) + " errate!");
+        }
     }
 
-    private void choosePic() {
+
+
+
+    private void choosePic(){
         Intent gallery_intent = new Intent();
         gallery_intent.setType("image/*");
         gallery_intent.setAction(Intent.ACTION_GET_CONTENT);
-        startActivityForResult(gallery_intent, 1);
+        startActivityForResult(gallery_intent,1);
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if (requestCode == 1 && resultCode == RESULT_OK && data != null && data.getData() != null) {
+        if(requestCode == 1 && resultCode == RESULT_OK && data != null && data.getData() != null){
             img_uri = data.getData();
             img_prof.setImageURI(img_uri);
             uploadPic();
         }
     }
 
-    private void uploadPic() {
+    private void uploadPic(){
 
         final ProgressDialog pd = new ProgressDialog(this);
         pd.setTitle("Carico la foto...");
@@ -260,7 +258,7 @@ public class Quiz_Web extends AppCompatActivity {
                     public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                         // Get a URL to the uploaded content
                         pd.dismiss();
-                        Toasty.success(Quiz_Web.this, "Foto caricata", Toast.LENGTH_LONG).show();
+                        Toasty.success(Score_JS.this,"Foto caricata", Toast.LENGTH_LONG).show();
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {
@@ -268,7 +266,7 @@ public class Quiz_Web extends AppCompatActivity {
                     public void onFailure(@NonNull Exception exception) {
                         // Handle unsuccessful uploads
                         pd.dismiss();
-                        Toasty.error(Quiz_Web.this, "Foto non caricata", Toast.LENGTH_LONG).show();
+                        Toasty.error(Score_JS.this,"Foto non caricata",Toast.LENGTH_LONG).show();
                     }
                 }).addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
             @Override
@@ -279,12 +277,12 @@ public class Quiz_Web extends AppCompatActivity {
         });
     }
 
-    private void getUserInfo() {
+    private void getUserInfo(){
         String id = auth.getCurrentUser().getUid();
         mDatabase.child("Utenti").child(id).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if (snapshot.exists()) {
+                if(snapshot.exists()){
                     String name = snapshot.child("nome").getValue().toString();
                     String email = snapshot.child("e-mail").getValue().toString();
 
@@ -305,15 +303,15 @@ public class Quiz_Web extends AppCompatActivity {
                 .addOnCompleteListener(this, new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
-                        Toasty.success(Quiz_Web.this, "Sign out effettuato", Toast.LENGTH_LONG).show();
+                        Toasty.success(Score_JS.this,"Sign out effettuato", Toast.LENGTH_LONG).show();
                         finish();
                     }
                 });
     }
 
-    public void ClickMenu(View view) {
+    public void ClickMenu(View view ) {
         //Open drawer
-        openDrawer(drawerLayout);
+        openDrawer (drawerLayout);
     }
 
     private static void openDrawer(DrawerLayout drawerLayout) {
@@ -323,14 +321,14 @@ public class Quiz_Web extends AppCompatActivity {
 
     public void ClickLogo(View view) {
         //Close drawer
-        startActivity(new Intent(Quiz_Web.this, Home.class));
+        startActivity(new Intent(Score_JS.this,Home.class));
 
     }
 
     public static void closeDrawer(DrawerLayout drawerLayout) {
         //Close drawer layout
         //Check condition
-        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
+        if(drawerLayout.isDrawerOpen(GravityCompat.START)) {
             //When drawer is open
             //Close drawer
             drawerLayout.closeDrawer(GravityCompat.START);
@@ -338,7 +336,7 @@ public class Quiz_Web extends AppCompatActivity {
     }
 
 
-    public void ClickCross(View view) {
+    public  void ClickCross (View view) {
         //Recreate activity
         recreate();
     }
@@ -356,7 +354,7 @@ public class Quiz_Web extends AppCompatActivity {
 
     public void ClickCorsiSalvati(View view) {
         //Redirect activity to CorsiSalvati
-        redirectActivity(this, CorsiSalvati.class);
+        redirectActivity(this, CorsiSalvati.class );
     }
 
 
@@ -367,7 +365,7 @@ public class Quiz_Web extends AppCompatActivity {
 
     public void ClickImpostazioni(View view) {
         //Redirect activity to Impostazioni
-        redirectActivity(this, Impostazioni.class);
+        redirectActivity(this, Impostazioni.class );
     }
 
     public void ClickAbout(View view) {
@@ -385,8 +383,8 @@ public class Quiz_Web extends AppCompatActivity {
             String share_msg = "https://play.google.com/store/apps/details?id=" + BuildConfig.APPLICATION_ID + "\n\n";
             intent.putExtra(Intent.EXTRA_TEXT, share_msg);
             startActivity(Intent.createChooser(intent, "Condividi tramite:"));
-        } catch (Exception e) {
-            Toasty.error(Quiz_Web.this, "Errore condivisione", Toast.LENGTH_LONG).show();
+        }catch (Exception e){
+            Toasty.error(Score_JS.this,"Errore condivisione",Toast.LENGTH_LONG).show();
         }
     }
 
@@ -398,7 +396,7 @@ public class Quiz_Web extends AppCompatActivity {
 
     public static void logout(final Activity activity) {
         //Initialize alert dialog
-        AlertDialog.Builder builder = new AlertDialog.Builder(activity);
+        AlertDialog.Builder builder= new AlertDialog.Builder(activity);
         //Set title
         builder.setTitle("Logout");
         //Set message
@@ -426,9 +424,9 @@ public class Quiz_Web extends AppCompatActivity {
 
     }
 
-    public static void redirectActivity(Activity activity, Class aClass) {
+    public static void  redirectActivity(Activity activity, Class aClass) {
         //Initialize intent
-        Intent intent = new Intent(activity, aClass);
+        Intent intent= new Intent(activity, aClass);
         //Set flag
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         //Start Activity

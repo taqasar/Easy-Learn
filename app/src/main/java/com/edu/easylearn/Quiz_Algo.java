@@ -60,6 +60,10 @@ public class Quiz_Algo extends AppCompatActivity {
     private DatabaseReference mDatabase;
 
     private ImageView back;
+    private ImageView backtrack;
+    private ImageView bst;
+    private ImageView complex;
+    private ImageView stack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -168,6 +172,39 @@ public class Quiz_Algo extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(Quiz_Algo.this,Quiz.class));
+            }
+        });
+
+        backtrack = findViewById(R.id.back_quiz);
+        stack = findViewById(R.id.stack_quiz);
+        bst = findViewById(R.id.bst_quiz);
+        complex = findViewById(R.id.complex_quiz);
+
+        backtrack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Quiz_Algo.this,Quiz_back.class));
+            }
+        });
+
+        stack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Quiz_Algo.this,Quiz_Stack.class));
+            }
+        });
+
+        bst.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Quiz_Algo.this,Quiz_bst.class));
+            }
+        });
+
+        complex.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Quiz_Algo.this,Quiz_Complex.class));
             }
         });
     }

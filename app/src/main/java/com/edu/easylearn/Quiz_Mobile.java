@@ -60,6 +60,9 @@ public class Quiz_Mobile extends AppCompatActivity {
     private DatabaseReference mDatabase;
 
     private  ImageView back;
+    private ImageView swift;
+    private ImageView android;
+    private ImageView flutter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -168,6 +171,31 @@ public class Quiz_Mobile extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(Quiz_Mobile.this,Quiz.class));
+            }
+        });
+
+        swift = findViewById(R.id.swift_quiz);
+        android = findViewById(R.id.android_quiz);
+        flutter = findViewById(R.id.flutter_quiz);
+
+        swift.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Quiz_Mobile.this,Quiz_Swift.class));
+            }
+        });
+
+        android.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Quiz_Mobile.this,Quiz_Android.class));
+            }
+        });
+
+        flutter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Quiz_Mobile.this,Quiz_Flutter.class));
             }
         });
     }

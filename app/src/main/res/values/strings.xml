@@ -103,5 +103,22 @@
     <string name="indietro">TODO</string>
     <string name="progress">TextView</string>
     <string name="carico_le_domande">Carico le domande...</string>
+    <string name="leggi_il_corso_di_android">Leggi il corso di Android</string>
+    <string name="leggi_il_corso_di_angular">Leggi il corso di Angular</string>
+    <string name="leggi_il_corso_di_css">Leggi il corso di CSS</string>
+    <string name="leggi_il_corso_di_cassandra">Leggi il corso di Cassandra</string>
+    <string name="leggi_il_corso_sulla_complessit">Leggi il corso sulla Complessità</string>
+    <string name="leggi_il_corso_su_flutter">Leggi il corso su Flutter</string>
+    <string name="leggi_il_corso_di_javascript">Leggi il corso di JavaScript</string>
+    <string name="leggi_il_corso_su_mongodb">Leggi il corso su MongoDB</string>
+    <string name="leggi_il_corso_su_nodejs">Leggi il corso su NodeJS</string>
+    <string name="leggi_il_corso_su_postgresql">Leggi il corso su PostgreSQL</string>
+    <string name="leggi_il_corso_su_reactjs">Leggi il corso su ReactJS</string>
+    <string name="leggi_il_corso_su_mysql">Leggi il corso su MySQL</string>
+    <string name="leggi_il_corso_su_stack_e_memoria">Leggi il corso su Stack e Memoria</string>
+    <string name="leggi_il_corso_su_swift">Leggi il corso su Swift</string>
+    <string name="leggi_il_corso_sul_backtracking">Leggi il corso sul Backtracking</string>
+    <string name="leggi_il_corso_sui_bst">Leggi il corso sui BST</string>
+    <string name="leggi_il_corso_di_angularjs">Leggi il corso di AngularJS</string>
 
 </resources>

@@ -60,6 +60,10 @@ public class Quiz_Db extends AppCompatActivity {
     private DatabaseReference mDatabase;
 
     private ImageView back_to_categories;
+    private ImageView sql;
+    private ImageView post;
+    private ImageView mongo;
+    private ImageView cassandra;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -168,6 +172,39 @@ public class Quiz_Db extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(Quiz_Db.this,Quiz.class));
+            }
+        });
+
+        sql = findViewById(R.id.swift_quiz);
+        cassandra = findViewById(R.id.cassandra_quiz);
+        mongo = findViewById(R.id.mongo_quiz);
+        post = findViewById(R.id.post_quiz);
+
+        sql.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Quiz_Db.this,Quiz_SQL.class));
+            }
+        });
+
+        cassandra.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Quiz_Db.this,Quiz_Cassandra.class));
+            }
+        });
+
+        mongo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Quiz_Db.this,Quiz_Mongo.class));
+            }
+        });
+
+        post.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Quiz_Db.this,Quiz_Post.class));
             }
         });
     }
