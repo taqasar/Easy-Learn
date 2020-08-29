@@ -13,7 +13,8 @@
         android:roundIcon="@drawable/ic_logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Score_back"></activity>
+        <activity android:name=".Redirect"></activity>
+        <activity android:name=".Score_back" />
         <activity android:name=".Quiz_back" />
         <activity android:name=".Score_bst" />
         <activity android:name=".Quiz_bst" />
