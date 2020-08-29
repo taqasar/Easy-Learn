@@ -120,5 +120,6 @@
     <string name="leggi_il_corso_sul_backtracking">Leggi il corso sul Backtracking</string>
     <string name="leggi_il_corso_sui_bst">Leggi il corso sui BST</string>
     <string name="leggi_il_corso_di_angularjs">Leggi il corso di AngularJS</string>
+    <string name="carico_la_pagina">Carico la pagina...</string>
 
 </resources>
