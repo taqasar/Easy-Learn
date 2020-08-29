@@ -147,6 +147,8 @@ public class Database extends AppCompatActivity {
         //Close drawer
         closeDrawer(drawerLayout);
 
+        redirectActivity(this, Home.class);
+
     }
 
     public static void closeDrawer(DrawerLayout drawerLayout) {

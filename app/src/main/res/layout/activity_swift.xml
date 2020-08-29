@@ -1,17 +1,695 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Swift">
 
-    <TextView
-        android:id="@+id/textView14"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="SWIFT"
-        android:textSize="60dp"
-        tools:layout_editor_absoluteX="104dp"
-        tools:layout_editor_absoluteY="281dp" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <include
+            layout="@layout/main_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="43dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/freccia_dietro"
+                android:layout_width="31dp"
+                android:layout_height="31dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:contentDescription="TODO"
+                android:src="@drawable/back_arrow" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="10dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/sf_ui_display_bold"
+                android:text="Swift"
+                android:textColor="#474747"
+                android:textSize="30sp" />
+
+
+        </LinearLayout>
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="524dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/sf_ui_display_bold"
+                        android:text="Introduzione"
+                        android:textColor="#ff0092"
+                        android:textSize="22sp" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="391dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_weight="0"
+                        android:fontFamily="@font/sf_ui_display_medium"
+                        android:text="Durante la WorldWide Developer Conference (WWDC) del 2 giugno 2014, Apple ha presentato un nuovo linguaggio di programmazione, Swift, che pian piano andrà a sostituire Objective-C, il linguaggio di sviluppo che per oltre 20 anni è stato utilizzato dalla community di sviluppatori per la creazione di applicazioni desktop su OS X e mobile su iOS.\n\nSwift è un linguaggio di programmazione conciso, tipizzato, efficiente e facile da imparare, anche per chi è alle prime armi nel mondo della programmazione. Apple ha lavorato su questo linguaggio per circa 4 anni in grande segreto, ed esso incorpora le migliori caratteristiche e funzionalità appartenenti ai moderni linguaggi di programmazione, come C#, JavaScript, Python, Rust e Go.\n\nSwift eredita tante moderne features da altri linguaggi, come gli Optionals, le collezioni, gli array che assomigliano alle List di C# e una sintassi molto concisa per la creazione dei dizionari. Altre novità sono le Closure, che prendono il posto dei blocchi in Objective-C, e i Generics, classi che consentono di definire comportamenti e azioni senza decidere a priori su che tipo di dati devono operare.\n\nApple afferma che Swift risulta essere due volte più veloce rispetto ad Objective-C e che c’è ancora margine per il miglioramento. Il linguaggio è ancora abbastanza giovane e Apple ad ogni release aggiungerà nuove caratteristiche.\n\nAnche se Apple spinge chiaramente nella direzione di Swift, Objective-C non è stato immediatamente abbandonato. Tutti i framework di Apple, a partire da AppKit e UIKit, che sono alla base delle librerie per la creazione di interfacce grafiche su OSX e iOS rispettivamente, sono scritti in Objective-C, e pertanto Swift deve poterne far uso. È infatti possibile sviluppare progetti “misti” con codice in Swift e Objective-C, richiamando funzioni e classi da entrambi i lati. Ancora molte aziende hanno tanto codice scritto in Objective-C e non è certamente conveniente farne il porting. Ma se uno sviluppatore inizia adesso con un nuovo progetto, ci sono poche ragioni per non utilizzare il nuovo linguaggio di Apple.\n"
+                        android:textColor="#474747"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/imageView4"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginRight="2dp"
+                        android:layout_weight="1"
+                        app:srcCompat="@drawable/swift_01" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/sf_ui_display_bold"
+                        android:text="Variabili e costanti"
+                        android:textColor="#ff0092"
+                        android:textSize="22sp" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="391dp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/sf_ui_display_medium"
+                        android:text="La definizione di una variabile in Swift avviene utilizzando la parola riservata var, seguita dal nome e dal tipo di dati che essa conterrà:\n\nvar nome: String\n\nSi noti che non è necessario utilizzare il punto e virgola al termine delle istruzioni in Swift, e questa è in generale una buona norma suggerita da Apple stessa, per rendere il codice più leggibile.\n\nLa variabile così definita, tuttavia, non può essere immediatamente utilizzata, in quanto il compilatore richiede che ogni variabile sia inizializzata prima dell'uso. È possibile dunque definire e assegnare un valore iniziale ad una variabile in un'unica istruzione:\n\nvar nome: String = Antonio \n\n"
+                        android:textColor="#474747"
+                        android:textSize="18sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/imageView5"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginRight="2dp"
+                        android:layout_weight="1"
+                        app:srcCompat="@drawable/swift_02" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/sf_ui_display_bold"
+                        android:text="Tipi di Dati"
+                        android:textColor="#ff0092"
+                        android:textSize="22sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="391dp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/sf_ui_display_medium"
+                        android:text="Swift è un linguaggio fortemente tipizzato: il compilatore deve essere sempre in grado di determinare, sia esplicitamente che implicitamente con il meccanismo di type inference, il tipo di dato di variabili, costanti, argomenti di funzione e valori di ritorno in ogni istante, pena il fallimento della compilazione. Swift è dunque un linguaggio type safe, caratteristica che permette di prevenire tutta una serie di errori di esecuzione già durante la compilazione.\n\nNegli esempi precedenti abbiamo visto il tipo String. Vediamo altri tipi di dati comuni in Swift:\n"
+                        android:textColor="#474747"
+                        android:textSize="18sp" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/imageView9"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginRight="2dp"
+                        android:layout_weight="1"
+                        app:srcCompat="@drawable/swift_03" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="391dp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/sf_ui_display_medium"
+                        android:text="Swift fornisce diversi tipi per rappresentare i numeri interi, a seconda della precisione e del supporto o meno dei numeri con segno (positivi e negativi). Di seguito un elenco dei tipi con segno e senza segno (Unsigned):\n\nInt8, Int16, Int32, Int64,UInt8, UInt16, UInt32, UInt64\n\nOltre a questi, sono disponibili anche Int e UInt. Di fatto Int è il tipo più comunente utilizzato e Apple stessa ne suggerisce l'uso quando non vi è esplicita necessità di specificare i bit da allocare per la variabile. La dimensione di Int e UInt viene determinata automaticamente dalla piattaforma in cui il codice verrà eseguito (ad esempio, gli Int sono a 64bit a partire da iPhone 6 in poi, con iOS >= 8).\n\ner rappresentare e manipolare numeri decimali, Swift offre i tipi Double e Float. Sono entrambi capaci di gestire numeri con segno. Un Double permette di rappresentare un numero in virgola mobile a 64bit, mentre un Float è limitato a 32bit.\n\nSe il tipo non viene specificato in fase di definizione di una variabile (o costante), il meccanismo di type inference gli assegna il tipo Double.\n\nIl tipo Bool prevede solo due valori logici true e false, particolarmente utili nelle istruzioni condizionali.\n"
+                        android:textColor="#474747"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/sf_ui_display_bold"
+                        android:text="Array e Dizionari"
+                        android:textColor="#ff0092"
+                        android:textSize="22sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="391dp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/sf_ui_display_medium"
+                        android:text="Un array viene definito e inizializzato con una sintassi molto simile a quella di altri linguaggi di programmazione.\n\nSu Swift, gli elementi di un array devono essere tutti dello stesso tipo.\n\nPer accedere ad un elemento dell’array, usiamo l’operatore subscript, indicando l’indice dell’elemento a cui siamo interessati (il primo elemento ha indice 0)\n\nSwift fornisce anche l’operatore Range che ci permette di selezionare un numero contiguo di elementi compresi tra due indici.\n\nÈ possibile inserire un nuovo elemento ad una data posizione. L’array aumenterà di dimensioni e gli elementi presenti verranno fatti slittare di una posizione a destra.\n\nl metodo remove(at:) restituisce, inoltre, l’elemento rimosso.\n\nPossiamo anche definire un array costante, usando let.\n\nInfine, vediamo qual è la notazione per definire una variabile di tipo array:\n"
+                        android:textColor="#474747"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/imageView8"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginRight="2dp"
+                        android:layout_weight="1"
+                        app:srcCompat="@drawable/swift_04" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/sf_ui_display_bold"
+                        android:text="Dizionari"
+                        android:textColor="#ff0092"
+                        android:textSize="22sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="391dp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/sf_ui_display_medium"
+                        android:text="I dizionari ci permettono di creare una lista (non ordinata) di coppie chiave-valore. Sono il secondo tipo collezione più diffuso in Swift.\n\nLa creazione di un dizionario con i letterali ha una sintassi molto più intuitiva rispetto a quella usata in Objective-C\n\nAnche per i dizionari, il tipo di tutte le chiavi e di tutti i valori devono essere identitici.\n\nLa rimozione di un elemento (chiave-valore) da un dizionario si ottiene con il metodo removeValue(forKey:)\n"
+                        android:textColor="#474747"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/imageView6"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginRight="2dp"
+                        android:layout_weight="1"
+                        app:srcCompat="@drawable/sql_06" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/sf_ui_display_bold"
+                        android:text="Costrutto Switch"
+                        android:textColor="#ff0092"
+                        android:textSize="22sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="391dp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/sf_ui_display_medium"
+                        android:text="In Swift, il costrutto switch è stavo rivisto e potenziato rispetto alla versione originale proveniente dal C. Vediamo subito un esempio:\n"
+                        android:textColor="#474747"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/imageView15"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginRight="2dp"
+                        android:layout_weight="1"
+                        android:contentDescription="TODO"
+                        app:srcCompat="@drawable/swift_06" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="391dp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/sf_ui_display_medium"
+                        android:text="Dato che l’esecuzione a cascata dei vari case non è possibile, per gestire l’abbinamento con più valori possiamo utilizzare diverse opzioni. La più semplice consiste nell’elencare tutti i valori per un dato case sulla stessa riga.\n\nLa seconda possibilità è usare operatore di range, per fare abbinamento con valori multipli\n\nOltre che confrontare il valore considerato con un elenco di casi o di range, il costrutto switch di Swift può lavorare anche su valori di tipo tupla.\n"
+                        android:textColor="#474747"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/sf_ui_display_bold"
+                        android:text="Classi"
+                        android:textColor="#ff0092"
+                        android:textSize="22sp" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="391dp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/sf_ui_display_medium"
+                        android:text="Swift è un linguaggio basato sul paradigma di programmazione ad oggetti. In questo articolo vedremo come definire una classe e come creare istanze o oggetti di una classe. In Swift si preferisce utilizzare il termine “istanze” perchè, come vedremo in seguito, è possibile crearle anche a partire da una struttura, altro concetto fondamentale della programmazione in Swift.\n\nUna classe è un costrutto che permette di definire un nuovo tipo di dati. A differenza di Objective-C, dove per definire una classe vengono utilizzati due file separati, in Swift tutto avviene in un singolo file. Nella dichiarazione di una classe sono generalmente definite un insieme di proprietà e di metodi, nonchè uno o più inizializzatori. Vediamone subito un esempio:\n"
+                        android:textColor="#474747"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/imageView30"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginRight="2dp"
+                        android:layout_weight="1"
+                        android:contentDescription="TODO"
+                        app:srcCompat="@drawable/swift_07"/>
+                </LinearLayout>
+
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/sf_ui_display_bold"
+                        android:text="Proprietà e metodi"
+                        android:textColor="#ff0092"
+                        android:textSize="22sp" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="391dp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/sf_ui_display_medium"
+                        android:text="Le proprietà sono definite come costanti o variabili, mentre i metodi sono definiti come funzioni. Uno speciale metodo, il cui nome è **init**, è incaricato di inizializzare correttamente le proprietà. Nell'esempio precedente, tuttavia, la variabile secondoNome non è inizializzata nel metodo init, in quanto una variabile di tipo opzionale è inizializzata di default al valore nil. Per le altre variabili non opzionali, qualora non fossero state inizializzate nell'inizializzatore (o al momento della definizione), il compilatore Swift avrebbe generato un errore a tempo di compilazione.\n\nDato che una classe definisce un tipo di dati, è possibile creare una o più istanze a partire da quella data classe. Di seguito un esempio in cui creiamo due istanze del tipo Persona:\n"
+                        android:textColor="#474747"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/imageView17"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginRight="2dp"
+                        android:layout_weight="1"
+                        android:contentDescription="TODO"
+                        app:srcCompat="@drawable/swift_08"/>
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="391dp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/sf_ui_display_medium"
+                        android:text="Swift è un linguaggio basato sul paradigma di programmazione ad oggetti. In questo articolo vedremo come definire una classe e come creare istanze o oggetti di una classe. In Swift si preferisce utilizzare il termine “istanze” perchè, come vedremo in seguito, è possibile crearle anche a partire da una struttura, altro concetto fondamentale della programmazione in Swift.\n\nUna classe è un costrutto che permette di definire un nuovo tipo di dati. A differenza di Objective-C, dove per definire una classe vengono utilizzati due file separati, in Swift tutto avviene in un singolo file. Nella dichiarazione di una classe sono generalmente definite un insieme di proprietà e di metodi, nonchè uno o più inizializzatori. Vediamone subito un esempio:\n"
+                        android:textColor="#474747"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/imageView18"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginRight="2dp"
+                        android:layout_weight="1"
+                        android:contentDescription="TODO"
+                        app:srcCompat="@drawable/swift_10"/>
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="391dp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/sf_ui_display_medium"
+                        android:text="Grazie per l'attenzione, per ulteriori approfondimenti rimandiamo al seguente link:\n\nhttps://www.html.it/guide/guida-swift/\n\n"
+                        android:textColor="#474747"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="151dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+
+                    <Button
+                        android:id="@+id/button_quiz"
+                        android:layout_width="200dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/button_bkg"
+                        android:fontFamily="@font/sf_ui_display_medium"
+                        android:text="Tenta il quiz"
+                        android:textAlignment="center"
+                        android:textAllCaps="false"
+                        android:textColor="#FFFFFF"
+                        android:textSize="20sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.01999998" />
+
+                    <Button
+                        android:id="@+id/button_home"
+                        android:layout_width="200dp"
+                        android:layout_height="60dp"
+                        android:layout_marginTop="50dp"
+                        android:layout_marginBottom="30dp"
+                        android:background="@drawable/button_bkg"
+                        android:fontFamily="@font/sf_ui_display_medium"
+                        android:text="Torna alla pagina iniziale"
+                        android:textAlignment="center"
+                        android:textAllCaps="false"
+                        android:textColor="#FFFFFF"
+                        android:textSize="20sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.85" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </LinearLayout>
+        </ScrollView>
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottom_navigation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#ffff"
+            app:itemIconTint="@drawable/selector"
+            app:itemTextColor="@drawable/selector"
+            app:menu="@menu/menu_navigation" />
+
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="300dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="@android:color/white">
+
+        <include layout="@layout/main_nav_drawer" />
+
+
+    </RelativeLayout>
+
+
+</androidx.drawerlayout.widget.DrawerLayout>
+

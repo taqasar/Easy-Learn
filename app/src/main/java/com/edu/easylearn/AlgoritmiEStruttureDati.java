@@ -148,6 +148,8 @@ public class AlgoritmiEStruttureDati extends AppCompatActivity {
         //Close drawer
         closeDrawer(drawerLayout);
 
+        redirectActivity(this, Home.class);
+
     }
 
     public static void closeDrawer(DrawerLayout drawerLayout) {

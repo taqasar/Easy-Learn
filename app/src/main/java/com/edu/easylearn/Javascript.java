@@ -12,6 +12,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -19,6 +20,8 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 public class Javascript extends AppCompatActivity {
 
     private ImageView back_arrow;
+    private Button  home_button;
+    private Button quiz_button;
     DrawerLayout drawerLayout;
 
     @Override
@@ -27,6 +30,27 @@ public class Javascript extends AppCompatActivity {
         setContentView(R.layout.activity_javascript);
 
         getSupportActionBar().hide();
+
+
+        home_button = findViewById(R.id.button_home);
+        home_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent home_intent = new Intent(Javascript.this,SviluppoWeb.class);
+                startActivity(home_intent);
+            }
+        });
+
+        quiz_button = findViewById(R.id.button_quiz);
+        quiz_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent quiz_intent = new Intent(Javascript.this,Quiz.class);
+                startActivity(quiz_intent);
+            }
+        });
+
+
 
         /**BOTTOM MENU CODE **/
         //Initialize and Assign Variable
@@ -71,7 +95,7 @@ public class Javascript extends AppCompatActivity {
         back_arrow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent back_home = new Intent(Javascript.this, Home.class);
+                Intent back_home = new Intent(Javascript.this, SviluppoWeb.class);
                 startActivity(back_home);
             }
         });

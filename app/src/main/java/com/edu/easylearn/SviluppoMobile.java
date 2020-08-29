@@ -139,6 +139,7 @@ public class SviluppoMobile extends AppCompatActivity {
     public void ClickLogo(View view) {
         //Close drawer
         closeDrawer(drawerLayout);
+        redirectActivity(this, Home.class);
 
     }
 

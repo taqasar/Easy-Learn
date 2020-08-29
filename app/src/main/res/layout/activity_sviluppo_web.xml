@@ -48,7 +48,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_weight="1"
                 android:fontFamily="@font/sf_ui_display_bold"
-                android:text="Algoritmi e strutture dati"
+                android:text="Sviluppo Web"
                 android:textColor="#474747"
                 android:textSize="25dp" />
         </LinearLayout>

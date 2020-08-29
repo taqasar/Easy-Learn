@@ -1,17 +1,637 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".AndroidMenu">
 
-    <TextView
-        android:id="@+id/textView15"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="ANDROID"
-        android:textSize="60dp"
-        tools:layout_editor_absoluteX="78dp"
-        tools:layout_editor_absoluteY="285dp" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <include
+            layout="@layout/main_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="43dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/freccia_dietro"
+                android:layout_width="31dp"
+                android:layout_height="31dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:contentDescription="TODO"
+                android:src="@drawable/back_arrow" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="10dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/sf_ui_display_bold"
+                android:text="Sviluppo Mobile Android"
+                android:textColor="#474747"
+                android:textSize="30sp" />
+
+
+        </LinearLayout>
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="524dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/sf_ui_display_bold"
+                        android:text="Introduzione"
+                        android:textColor="#ff0092"
+                        android:textSize="22sp" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="391dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_weight="0"
+                        android:fontFamily="@font/sf_ui_display_medium"
+                        android:text="Android è il principale sistema operativo per il mobile al mondo. Stando alle statistiche, anima circa tre dispositivi su quattro lasciando lo spazio restante ad iOS di Apple. Oltre a smartphone e tablet, si è imposto in vari settori man mano che l’evoluzione tecnologica gliene ha offerto la possibilità. Esistono infatti più piattaforme rivolte a dispositivi differenti: Wear OS per gli indossabili, Android TV per le televisioni intelligenti, Android for Cars per la realizzazione di app integrate con le autovetture, Android Things dedicato all’IoT (Internet of Things), fino alla possibilità di distribuire app Android su sistemi Chrome OS come i Chromebook.\n\nGli è stata attribuita – e probabilmente a ragione – la più veloce diffusione mai vista per un sistema operativo mobile. Ma quali sono i fattori di questo successo e soprattutto perchè tutto ciò sta capitando ad Android? Le motivazioni ipotizzate sono varie e di varia natura. Gran parte del merito è stato attribuito alle sue radici ben salde nel mondo open source. Android, infatti, è figlio di Linux, ha attirato l’interesse di tanti sviluppatori  che per anni si sono stretti intorno ai grandi bacini del software libero ed accoglie in sé tutto il meglio di quanto è stato ideato per supportare lo sviluppo del web, desktop e mobile sia in termini di pattern progettuali che di librerie software.\n\nEppure architettura del sistema ed open source sono aspetti che interessano molto una platea fortemente tecnica come programmatori ed ingegneri informatici. Per decretare un successo tanto ampio è necessario che ci sia anche un forte riscontro di pubblico. Sicuramente un qualcosa che ha contraddistinto questo sistema è stata la sua adozione da parte di dispositivi molto diversi tra loro, non solo per tipologia – smartphone piuttosto che tablet – ma soprattutto per fasce di prezzo, da poche decine di euro fino a  cifre piuttosto significative.\n"
+                        android:textColor="#474747"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/imageView4"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginRight="2dp"
+                        android:layout_weight="1"
+                        app:srcCompat="@drawable/android_01" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/sf_ui_display_bold"
+                        android:text="L'SDK e l'ambiente di sviluppo"
+                        android:textColor="#ff0092"
+                        android:textSize="22sp" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="391dp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/sf_ui_display_medium"
+                        android:text="Il primo passo per iniziare a sviluppare app Android consiste nel dotarsi degli strumenti adeguati. Il cuore di questo tipo di programmazione risiede in un ambiente noto come Android SDK. Vi si potrebbe interfacciare direttamente ma, fortunatamente, è stato creato un ambiente di lavoro efficiente, intuitivo e multipiattaforma che prende il nome di Android Studio. Con questo potremo utilizzare tutte le funzionalità dell’SDK senza alcuna difficoltà, oltre che lavorare al codice, creare interfacce utente e testare le applicazioni. In questa lezione li conosceremo entrambi ed impareremo ad installarli.\n\nNonostante la prima generazione di sviluppatori Android si sia formata su Eclipse, la nascita di Android Studio e la sua raggiunta maturità sono stati salutati con gioia dagli addetti ai lavori. Infatti questo ambiente – ottenibile dal sito ufficiale di Android – è venuto al mondo sotto i migliori auspici, all’insegna della flessibilità  e della praticità. Innanzitutto, è figlio di IntelliJ, un IDE molto intuitivo ed efficiente prodotto dalla società JetBrains. In secondo luogo, è scaturito dalla stessa Google e nasce appositamente per Android, integrandosi con tutto il suo ecosistema. Permette di realizzare progetti per smartphone e tablet, nonchè per dispositivi indossabili, Android Auto e Android TV. Il colosso di Mountain View ha a disposizione un universo di servizi cloud, ed Android Studio offre a tutti i nostri progetti un ponte per creare app che dialoghino con essi.\n\nAll’inizio di ogni nuovo progetto, l’IDE propone diversi template che rappresentano i tipi più in voga di applicazioni e la configurazione è affidata ai file build di Gradle. Quest’ultimo è uno strumento di build automation che permette una configurazione molto flessibile con una sintassi mutuata dal linguaggio Groovy. Un contributo utilissimo che offre Gradle è la gestione delle dipendenze in stile Maven. Quando avremo bisogno di integrare librerie di sviluppo prodotte da Android o da sviluppatori di terze parti potremo inserire direttive che permetteranno di recuperarle direttamente in rete tramite “coordinate” costituite da group id, artifact id e versione.\n"
+                        android:textColor="#474747"
+                        android:textSize="18sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/imageView5"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginRight="2dp"
+                        android:layout_weight="1"
+                        app:srcCompat="@drawable/android_02" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/sf_ui_display_bold"
+                        android:text="Android SDK"
+                        android:textColor="#ff0092"
+                        android:textSize="22sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="391dp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/sf_ui_display_medium"
+                        android:text="Come ultima nota, diamo uno sguardo più ravvicinato all’Android SDK. Un aspetto molto importante è che questo SDK è costituito da molti strumenti – programmi, emulatori, piattaforme per ogni versione di Android e molto altro – la cui composizione non è immutabile ma viene gestita tramite il programma Android SDK Manager, avviabile sia da Eclipse che da Android Studio (in quest’ultimo caso tramite il menu Tools). Grazie al Manager, il programmatore potrà profilare le piattaforme e gli strumenti presenti nel SDK nella maniera più congeniale al proprio lavoro. Maggiori dettagli in merito verranno via via presentati nel corso delle successive sezioni della guida.\n\nUn paio di download, qualche click per installare e scompattare: indipendentemente dal sistema operativo del proprio PC, l’ambiente per lo sviluppo su Android non necessità di grandi operazioni per essere pronto all’utilizzo e alla realizzazione della prima app.\n"
+                        android:textColor="#474747"
+                        android:textSize="18sp" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/imageView9"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginRight="2dp"
+                        android:layout_weight="1"
+                        app:srcCompat="@drawable/android_03" />
+                </LinearLayout>
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/sf_ui_display_bold"
+                        android:text="GLi elementi e il funzionamento di base di un'applicazione"
+                        android:textColor="#ff0092"
+                        android:textSize="22sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="391dp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/sf_ui_display_medium"
+                        android:text="Ogni applicazione Android, indipendentemente dalla finalità che si prefigge, affida le sue funzionalità a quattro tipi di componenti. Si tratta di Activity, Service, Content Provider e BroadcastReceiver ed esistono affinchè la nostra applicazione possa integrarsi alla perfezione nell’ecosistema Android.\n\nrima di addentrarci nella spiegazione di ognuna di esse, è utile concentrarsi un attimo su due principi ispiratori che, tra gli altri, sono alla base della maggior parte delle scelte progettuali operate dai creatori di Android. Tenerli a mente ci permetterà di comprendere meglio ciò che del  sistema verrà illustrato nei prossimi capitoli:\n"
+                        android:textColor="#474747"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/imageView8"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginRight="2dp"
+                        android:layout_weight="1"
+                        app:srcCompat="@drawable/android_04" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/sf_ui_display_bold"
+                        android:text="Le fondamenta di Android"
+                        android:textColor="#ff0092"
+                        android:textSize="22sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="391dp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/sf_ui_display_medium"
+                        android:text="Un’Activity è un’interfaccia utente. Ogni volta che si usa un’app generalmente si interagisce con una o più “pagine” mediante le quali si consultano dati o si immettono input. Ovviamente la realizzazione di Activity è il punto di partenza di ogni corso di programmazione Android visto che è il componente con cui l’utente ha il contatto più diretto. Le Activity nel loro complesso costituiscono il flusso in cui l’utente si inoltra per sfruttare le funzionalità messe a disposizione. Questo richiede pertanto non solo la realizzazione delle interfacce in sé stesse, ma anche una corretta progettazione della navigazione tra di esse offrendo la possibilità di sfogliarne i contenuti e risalirli gerarchicamente in maniera coerente.\n\nUn Service svolge un ruolo, se vogliamo, opposto all’Activity (sebbene, a livello di ereditarietà di classe siano imparentati). Infatti rappresenta un lavoro – generalmente lungo e continuato – che viene svolto interamente in background senza bisogno di interazione diretta con l’utente. Ad esempio, un’app che permette di avviare un audio che non si interrompe alla chiusura della sua interfaccia con tutta probabilità basa il suo funzionamento su un Service. I loro usi sono dei più disparati e, a seconda dei casi, l’utente potrebbe anche non notare il loro avvio ottenendone però i benefici. Da una punto di vista strutturale, i Service sono di due tipologie: started e bounded. L’esempio della musica in background rientra nella prima casistica: un Service è started quando un’app ha bisogno di svolgere attività in background, mirate ad uno scopo specifico, fino al loro completamento. I Service del secondo genere, i bounded, vengono attivati solo nel caso in cui un’altra app abbia bisogno di connettersi a loro. Si tratta di un tipo di Service che permette l’interazione tra processi differenti e risponde ad una logica simile a quella delle API nei servizi web. Si noti inoltre che anche questo settore è stato rivoluzionato negli anni, in particolare con la nascita dei JobScheduler che permettono lavori in background con un uso parsimonioso della batteria.\n\nUn Content Provider nasce con lo scopo della condivisione di dati tra applicazioni. La sua finalità richiama quel principio di sicurezza dell’applicazione di cui si è trattato poco fa. Questi componenti permettono di condividere, nell’ambito del sistema, contenuti custoditi in un database, su file o reperibili mediante accessi in Rete. Tali contenuti potranno essere usati da altre applicazioni senza invadere lo spazio di memoria ma stabilendo quel dialogo “sano” cui si è accennato\n\n"
+                        android:textColor="#474747"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/imageView6"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginRight="2dp"
+                        android:layout_weight="1"
+                        app:srcCompat="@drawable/android_05" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/sf_ui_display_bold"
+                        android:text="Activity, la prima pagina dell'applicazione"
+                        android:textColor="#ff0092"
+                        android:textSize="22sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="391dp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/sf_ui_display_medium"
+                        android:text="Il progetto approntato nel capitolo precedente con l’aiuto dell’IDE può essere ora analizzato nel dettaglio. Lo scopo che ci prefiggiamo è quello di osservare da vicino come è fatta un’Activity, il primo dei quattro componenti basilari che troviamo nelle applicazioni Android.\n\nNel nostro progetto ce n’è una ed è l’interfaccia utente che mostra il messaggio “Hello World”. Nonostante la sua semplicità, mette in luce un aspetto fondamentale. Per creare un’Activity è necessario fare due cose:\n\n1) estendere la classe Activity o una da essa derivata, appartenente al framework Android;\n\n2) egistrare l’Activity nell’AndroidManifest.xml mediante l’uso dell’apposito tag XML. Tra l’altro, questo dettame vale per tutte le quattro componenti fondamentali di un’applicazione.\n"
+                        android:textColor="#474747"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/imageView15"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginRight="2dp"
+                        android:layout_weight="1"
+                        android:contentDescription="TODO"
+                        app:srcCompat="@drawable/android_06" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="391dp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/sf_ui_display_medium"
+                        android:text="E se volessimo altre activity? È possibile averne? Certamente.\n\nL’importante è che ogni activity venga prodotta seguendo i due passi definiti all’inizio di questa sezione: (1) creare una classe Java che estenda Activity e (2) definire un nodo activity in AndroidManifest.xml che riporti nell’attributo android:name il nome della classe corrispondente. A proposito di questo, il sottonodo intent-filter riferito all’action MAIN va indicato solo nell’Activity principale del progetto.\n\nL’utente passerà da un’activity all’altra in maniera simile a come è abituato a fare tra le pagine dei siti Internet ma qui il tutto avverrà mediante il potente meccanismo degli Intent spiegato a breve.\n"
+                        android:textColor="#474747"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/sf_ui_display_bold"
+                        android:text="Ciclo di vita di un'Activity"
+                        android:textColor="#ff0092"
+                        android:textSize="22sp" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="391dp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/sf_ui_display_medium"
+                        android:text="Una delle più note illustrazioni della programmazione Android è questa:\n"
+                        android:textColor="#474747"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/imageView30"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginRight="2dp"
+                        android:layout_weight="1"
+                        android:contentDescription="TODO"
+                        app:srcCompat="@drawable/android_07"/>
+                </LinearLayout>
+
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/sf_ui_display_bold"
+                        android:text="Layout di un'app Android"
+                        android:textColor="#ff0092"
+                        android:textSize="22sp" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="391dp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/sf_ui_display_medium"
+                        android:text="Un’Activity ha bisogno di un volto, di un suo aspetto grafico. Sempre. Anche nei casi più semplici, come quando si limita a stampare la stringa “Hello World!”.\n\nLa struttura grafica di un’Activity prende il nome di Layout ed è una delle prime competenze di cui ha bisogno un neo-programmatore Android.\n\nbbiamo già incontrato i layout nel corso di questa guida. È successo quando si è parlato della prima Activity, ma anche quando si è illustrato l’organizzazione delle risorse. Ora è arrivato il momento di entrare nel vivo del discorso scoprendone le tipologie più comuni e analizzandole sia in termini di caratteristiche che di finalità.\n\nLe interfacce utente in Android possono essere create in modo procedurale o dichiarativo. Nel primo caso si intende l’implementazione dell’interfaccia grafica nel codice: ad esempio, in un’applicazione Swing scriviamo il codice Java per creare e manipolare tutti gli oggetti dell’interfaccia utente, come JButton, JFrame e così via.\n\nLa creazione dichiarativa non richiede la scrittura di codice: l’esempio tipico del metodo dichiarativo è rappresentato dalla creazione di una pagina web statica, in cui utilizziamo l’HTML per descrivere cosa vogliamo vedere nella pagina. L’HTML è dunque dichiarativo.\n\nAndroid permette la creazione di interfacce sia procedurali sia dichiarative: possiamo creare un’interfaccia utente completamente in codice Java (metodo procedurale) oppure possiamo creare l’interfaccia utente attraverso un descrittore XML (metodo dichiarativo). Android inoltre permette anche un approccio ibrido, in cui si crea un’interfaccia in modo dichiarativo e la si controlla e specifica in modo procedurale (si richiama il descrittore XML da codice e si continua a lavorare da lì).\n\nNella prassi, su Android un layout viene progettato in XML, in una modalità che ricorda molto l’uso di HTML per le pagine web. Ciò è particolarmente apprezzato da tutti quei programmatori che provengono da esperienze professionali o percorsi didattici nel settore. Per questi motivi, nel seguito della guida ci affideremo principalmente a questa modalità.\n\nNel framework Android sono stati definiti vari tipi di layout ma ce ne sono tre di utilizzo molto comune che permettono di affrontare ogni situazione:\n"
+                        android:textColor="#474747"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/imageView17"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginRight="2dp"
+                        android:layout_weight="1"
+                        android:contentDescription="TODO"
+                        app:srcCompat="@drawable/android_08"/>
+                </LinearLayout>
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="391dp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/sf_ui_display_medium"
+                        android:text="Grazie per l'attenzione, per ulteriori approfondimenti rimandiamo al seguente link:\n\nhttps://www.html.it/guide/guida-android/\n\n"
+                        android:textColor="#474747"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="151dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+
+                    <Button
+                        android:id="@+id/button_quiz"
+                        android:layout_width="200dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/button_bkg"
+                        android:fontFamily="@font/sf_ui_display_medium"
+                        android:text="Tenta il quiz"
+                        android:textAlignment="center"
+                        android:textAllCaps="false"
+                        android:textColor="#FFFFFF"
+                        android:textSize="20sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.01999998" />
+
+                    <Button
+                        android:id="@+id/button_home"
+                        android:layout_width="200dp"
+                        android:layout_height="60dp"
+                        android:layout_marginTop="50dp"
+                        android:layout_marginBottom="30dp"
+                        android:background="@drawable/button_bkg"
+                        android:fontFamily="@font/sf_ui_display_medium"
+                        android:text="Torna alla pagina iniziale"
+                        android:textAlignment="center"
+                        android:textAllCaps="false"
+                        android:textColor="#FFFFFF"
+                        android:textSize="20sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.85" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </LinearLayout>
+        </ScrollView>
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottom_navigation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#ffff"
+            app:itemIconTint="@drawable/selector"
+            app:itemTextColor="@drawable/selector"
+            app:menu="@menu/menu_navigation" />
+
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="300dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="@android:color/white">
+
+        <include layout="@layout/main_nav_drawer" />
+
+
+    </RelativeLayout>
+
+
+</androidx.drawerlayout.widget.DrawerLayout>
+

@@ -1,17 +1,772 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".PostgreDB">
 
-    <TextView
-        android:id="@+id/textView23"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="PostGreDB"
-        android:textSize="60sp"
-        tools:layout_editor_absoluteX="79dp"
-        tools:layout_editor_absoluteY="309dp" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <include
+            layout="@layout/main_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="43dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/freccia_dietro"
+                android:layout_width="31dp"
+                android:layout_height="31dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:contentDescription="TODO"
+                android:src="@drawable/back_arrow" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="10dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/sf_ui_display_bold"
+                android:text="PostgreSQL"
+                android:textColor="#474747"
+                android:textSize="30sp" />
+
+
+        </LinearLayout>
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="524dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/sf_ui_display_bold"
+                        android:text="Introduzione"
+                        android:textColor="#ff0092"
+                        android:textSize="22sp" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="391dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_weight="0"
+                        android:fontFamily="@font/sf_ui_display_medium"
+                        android:text="PostgreSQL è unanimemente riconosciuto come il miglior ORDBMS (Object Relational DataBase Managemente System) non commerciale presente ad oggi nel panorama mondiale, l’unico fra i prodotti open source, a poter competere ad armi pari con colossi commerciali come Oracle, Microsoft SQL Server, Interbase, Db2, e così via.\n\nPostgreSQL è, come accennato, un prodotto open source, il che vuol dire che il suo sorgente (ossia il codice C con cui è stato sviluppato) è liberamente consultabile ed anche modificabile a proprio piacimento; esistono anche comunque, delle versioni commerciali di PostgreSQL , ad esempio quella di Red Hat, che al sorgente aggiunge anche un tool grafico di installazione ed un’assistenza limitata all’installazione stessa.\n\nFra le caratteristiche principali di PostgreSQL (che non analizzeremo perchè esula dagli scopi dell’articolo), ricordiamo:\n"
+                        android:textColor="#474747"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/imageView4"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginRight="2dp"
+                        android:layout_weight="1"
+                        app:srcCompat="@drawable/postgre_02" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="391dp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/sf_ui_display_medium"
+                        android:text="PostgreSQL , così come lo conosciamo (e lo chiamiamo) adesso, è frutto di un lungo lavoro iniziato nel lontano 1977; fu infatti in quell’anno che iniziò lo sviluppo di un progetto chiamato Ingres, presso l’Università della California a Berkeley, progetto che poi fu preso e migliorato dalla Relational Technologies/Ingres Corporation che produsse i primi server database che ottennero successo commercialmente. (Ingres Corp. fu in seguito acquistata dalla Computer Associates).\n\nNel 1986 poi, un altro gruppo, guidato das Michael Stonebraker, proseguì lo sviluppo del sorgente originario di Ingres, dando vita ad un RDBMS chiamato Postgres il cui codice fu poi preso dalla Illustra e sviluppato come prodotto commerciale. (L’Illustra fu più tardi comprata da Informix e integrata nel Informix’s Universal Server).\n\nNell’estate del 1996, divenne chiaro che la domanda di un server di Database open-source era grande e che un nuovo team di sviluppo doveva essere formato. Marc G. Fournier, in Toronto, Canada, si offrì di ospitare la mailing list, e mise a disposizione un server per apportare le modifiche ai file sorgenti tramite CVS.\n\nAll’inizio c’erano quattro persone impegnate nello sviluppo (il cui nome, nel frattempo, era diventato l’attuale PostgreSQL ), Marc G. Fournier, Thomas Lockhart da Pasadena, California, Vadim Mikheev da Krasnoyarsk, Russia, e Bruce Momjian.\n\nPer chi volesse approfondire un pò la storia dei PostgreSQL, ecco il link all’articolo “The History of PostgreSQL Development”, di Bruce Momjian, di cui ho tradotto alcune parti: http://www.daemonnews.org/199907/devhistory.html.\n"
+                        android:textColor="#474747"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/sf_ui_display_bold"
+                        android:text="Casts"
+                        android:textColor="#ff0092"
+                        android:textSize="22sp" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="391dp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/sf_ui_display_medium"
+                        android:text="PostgreSQL, come ogni RDBMS, tenta di effettuare il casting automatico dei tipi quando deve effettuare operazioni che coinvolgono tipi di dato differenti tra loro. Con l’istruzione CREATE CAST è possibile definire delle modalità di conversione personalizzate tra i tipi di dato, le regole di casting aggiuntive sono visibili in PgAdmin all’interno del contenitore Casts.\n"
+                        android:textColor="#474747"
+                        android:textSize="18sp" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/sf_ui_display_bold"
+                        android:text="Linguaggi"
+                        android:textColor="#ff0092"
+                        android:textSize="22sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="391dp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/sf_ui_display_medium"
+                        android:text="Si tratta dei linguaggi con cui è possibile creare le Stored procedures e di cui abbiamo parlato in precedenza. Nel nostro caso abbiamo installato esclusivamente PL/pgSQL, quello di default.\n"
+                        android:textColor="#474747"
+                        android:textSize="18sp" />
+                </LinearLayout>
+
+
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/sf_ui_display_bold"
+                        android:text="Schemas"
+                        android:textColor="#ff0092"
+                        android:textSize="22sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="391dp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/sf_ui_display_medium"
+                        android:text="Gli schemi sono prima di tutto una risposta ad una limitazione di PostgreSQL: poichè non è possibile effettuare query che coinvolgano più database (ad esempio un’istruzione Select che esegua una Join tra tabelle di database differenti) è previsto che un database sia suddivisibile in schemi. Ogni schema rappresenta una diversa entità all’interno del database (ha le proprie tabelle, le proprie stored procedures e così via) ma si possono eseguire query che coinvolgano tabelle di schemi differenti. Ogni database contiene almeno uno schema di default denominato public.\n\nTutti gli oggetti che esamineremo nei prossimi paragrafi appartengono agli schemi e non ai database come quelli appena descritti.\n"
+                        android:textColor="#474747"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/sf_ui_display_bold"
+                        android:text="Aggregates"
+                        android:textColor="#ff0092"
+                        android:textSize="22sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="391dp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/sf_ui_display_medium"
+                        android:text="In questo “contenitore” finiscono le funzioni di aggregazione aggiuntive che l’utente può creare per estendere quelle già presenti nel database, esempi di funzioni di aggregazione predefinite sono SUM(), AVG(), COUNT() e così via.\n"
+                        android:textColor="#474747"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/sf_ui_display_bold"
+                        android:text="Conversions"
+                        android:textColor="#ff0092"
+                        android:textSize="22sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="391dp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/sf_ui_display_medium"
+                        android:text="Funzioni di conversione personalizzate tra character sets differenti.\n"
+                        android:textColor="#474747"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/sf_ui_display_bold"
+                        android:text="Domains"
+                        android:textColor="#ff0092"
+                        android:textSize="22sp" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="391dp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/sf_ui_display_medium"
+                        android:text="PostgreSQL supporta i vincoli (constraints) di colonna e di tabella. Quando un vincolo è utilizzabile da più tabelle, anzichè definirlo per la singola tabella , possiamo assegnarlo come domain in modo che diventi universale. Nel caso di un vincolo sulla validità dell’input, se ad esempio dovessimo utilizzare in più tabelle un campo atto a contenere codici di avviamento postale (Cap),  anzichè effettuare un controllo di validità sul Cap assegnandolo alla singola tabella, posso creare un tipo di dato Cap e contestualmente assegnarvi il controllo di validità. Per esempio:\n"
+                        android:textColor="#474747"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/imageView15"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginRight="2dp"
+                        android:layout_weight="1"
+                        android:contentDescription="TODO"
+                        app:srcCompat="@drawable/mongo_06" />
+                </LinearLayout>
+
+
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/sf_ui_display_bold"
+                        android:text="Functions, Operators, Operator Classes"
+                        android:textColor="#ff0092"
+                        android:textSize="22sp" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="391dp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/sf_ui_display_medium"
+                        android:text="Sono funzionalità aggiuntive con cui è possibile estendere il RDBMS, di solito fanno riferimento ad un compilato in linguaggio C. È possibile aggiungere funzioni di vario tipo e nuovi operatori. Difficilmente avremo la necessità di estendere il database programmando in C poichè l’abbondanza di moduli di terze parti rende superfluo mettere mano a funzionalità così complesse.\n"
+                        android:textColor="#474747"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/sf_ui_display_bold"
+                        android:text="Procedure e Triggers"
+                        android:textColor="#ff0092"
+                        android:textSize="22sp" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="391dp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/sf_ui_display_medium"
+                        android:text="Abbiamo già detto cosa siano le Stored Procedures, i Triggers sono stored procedures particolari che vengono innescate automaticamente al verificarsi di determinati eventi.\n\n"
+                        android:textColor="#474747"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/sf_ui_display_bold"
+                        android:text="Sequences"
+                        android:textColor="#ff0092"
+                        android:textSize="22sp" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="391dp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/sf_ui_display_medium"
+                        android:text="PostgreSQL non prevede il tipo di dato “autoincrement” come MySQL, in origine quindi non era possibile definire un campo il cui valore si incrementava automaticamente all’aggiunta di un nuovo record. L’unico modo era definire una sequenza, ovvero una sorta di generatore automatico che doveva essere richiamato quando si isneriva un valore nel campo da incrementare. A partire dalla release 7.3 tuttavia è stato introdotto il tipo di dato Serial che pur non essendo un vero “autoincrement” genera automaticamente la sequenza e la assegna come valore di default del campo.\n"
+                        android:textColor="#474747"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/sf_ui_display_bold"
+                        android:text="Types"
+                        android:textColor="#ff0092"
+                        android:textSize="22sp" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="391dp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/sf_ui_display_medium"
+                        android:text="Sono i tipi di dati che vanno ad integrare o estendere quelli predefiniti, possono essere creati in svariati linguaggi, solitamente in C. Si tratta di un modo diverso di definire nuovi tipi di dati rispetto all’utilizzo dei domains.\n"
+                        android:textColor="#474747"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/sf_ui_display_bold"
+                        android:text="Views"
+                        android:textColor="#ff0092"
+                        android:textSize="22sp" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="391dp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/sf_ui_display_medium"
+                        android:text="Le Viste sono una sorta di query memorizzate in tabelle virtuali, per questo vengono definite anche “pseudo-tabelle”. Si rivelano utili in diverse situazioni, in modo particolare quando si vuole concedere agli utenti l’accesso a determinati dati e solo a quelli.\n"
+                        android:textColor="#474747"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/sf_ui_display_bold"
+                        android:text="Conclusioni"
+                        android:textColor="#ff0092"
+                        android:textSize="22sp" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="391dp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/sf_ui_display_medium"
+                        android:text="Abbiamo esaminato l’installazione di PostgreSQL in Windows e illustrato quali siano gli aspetti che potrebbero disorientare chi fino ad oggi abbia utilizzato esclusivamente MySQL. PostgreSQL , da sempre un RDBMS completissimo, rappresenta una valida alternativa a MySQL in ogni ambito di applicazione sia per la licenza molto permissiva da cui è protetto, sia per il fatto che MySQL è impegnato in una corsa continua all’aggiunta di nuove funzionalità (già presenti da tempo in PostgreSQL) che comporta frequentemente delle incompatibilità con il passato.\n"
+                        android:textColor="#474747"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/sf_ui_display_bold"
+                        android:text="Tables"
+                        android:textColor="#ff0092"
+                        android:textSize="22sp" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="391dp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/sf_ui_display_medium"
+                        android:text="Sono l’unico aspetto che dovrebbe essere già familiare agli utenti di MySQL, tuttavia ogni database nasce già con delle tabelle predefinite che non devono essere toccate.\n"
+                        android:textColor="#474747"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="391dp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/sf_ui_display_medium"
+                        android:text="\nGrazie per l'attenzione.\n\n"
+                        android:textColor="#474747"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="151dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+
+                    <Button
+                        android:id="@+id/button_quiz"
+                        android:layout_width="200dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/button_bkg"
+                        android:fontFamily="@font/sf_ui_display_medium"
+                        android:text="Tenta il quiz"
+                        android:textAlignment="center"
+                        android:textAllCaps="false"
+                        android:textColor="#FFFFFF"
+                        android:textSize="20sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.01999998" />
+
+                    <Button
+                        android:id="@+id/button_home"
+                        android:layout_width="200dp"
+                        android:layout_height="60dp"
+                        android:layout_marginTop="50dp"
+                        android:layout_marginBottom="30dp"
+                        android:background="@drawable/button_bkg"
+                        android:fontFamily="@font/sf_ui_display_medium"
+                        android:text="Torna alla pagina iniziale"
+                        android:textAlignment="center"
+                        android:textAllCaps="false"
+                        android:textColor="#FFFFFF"
+                        android:textSize="20sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.85" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </LinearLayout>
+        </ScrollView>
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottom_navigation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#ffff"
+            app:itemIconTint="@drawable/selector"
+            app:itemTextColor="@drawable/selector"
+            app:menu="@menu/menu_navigation" />
+
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="300dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="@android:color/white">
+
+        <include layout="@layout/main_nav_drawer" />
+
+
+    </RelativeLayout>
+
+
+</androidx.drawerlayout.widget.DrawerLayout>
+

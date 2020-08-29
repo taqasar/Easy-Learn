@@ -1,17 +1,659 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SQL">
 
-    <TextView
-        android:id="@+id/textView24"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="SQL ACTIVITY"
-        android:textSize="60sp"
-        tools:layout_editor_absoluteX="13dp"
-        tools:layout_editor_absoluteY="282dp" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <include
+            layout="@layout/main_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="43dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/freccia_dietro"
+                android:layout_width="31dp"
+                android:layout_height="31dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:contentDescription="TODO"
+                android:src="@drawable/back_arrow" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="10dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/sf_ui_display_bold"
+                android:text="SQL"
+                android:textColor="#474747"
+                android:textSize="30sp" />
+
+
+        </LinearLayout>
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="524dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/sf_ui_display_bold"
+                        android:text="Introduzione"
+                        android:textColor="#ff0092"
+                        android:textSize="22sp" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="391dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_weight="0"
+                        android:fontFamily="@font/sf_ui_display_medium"
+                        android:text="Uno dei moduli principali di un’applicazione moderna è, generalmente, quello che riguarda la gestione dei dati, che può essere basato sull’utilizzo di svariate tecnologie. Si può pensare, per piccoli progetti, di memorizzare i dati in file di testo, più o meno strutturati; ma per i software professionali e di grandi dimensioni, è quasi sempre impossibile prescindere dall’utilizzo di un database.\n\nIl database è una struttura software piuttosto complessa, in grado di ottimizzare l’accesso e la modifica di grandi quantità di dati archiviati su un generico dispositivo di archiviazione. Negli anni, lo sviluppo dei database ha visto una crescita notevole, e si è affermata quasi ovunque la classe dei database relazionali. Per interagire con tale classe di database vi è, oggi, un linguaggio considerato in tutto e per tutto uno standard, e denominato SQL (acronimo che sta per Structured Query Language).\n\nLa grammatica sintattica utilizzata nelle varie lezioni per spiegare la sintassi dei comandi SQL e’ molto semplice:\n"
+                        android:textColor="#474747"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/imageView4"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginRight="2dp"
+                        android:layout_weight="1"
+                        app:srcCompat="@drawable/sql_02" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="391dp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/sf_ui_display_medium"
+                        android:text="Il World Wide Web e’ forse una delle maggiori fonti di informazione a cui oggi possiamo attingere: avendo a disposizione un collegamento a Internet ed un browser Web, un software ormai comune su qualsiasi computer, abbiamo la possibilita’ di consultare un patrimonio di centinaia di milioni di pagine riguardanti praticamente ogni argomento di interesse.\n\nSpesso queste pagine non sono documenti statici, ma vengono creati dinamicamente quando noi li richiediamo e le informazioni che contengono vengono estratte da un database. Se il database e’ un database relazionale (vedremo in seguito cosa questo significa), probabilmente il linguaggio utilizzato per recuperare le informazioni che ci vengono mostrate e’ SQL (Structured Query Language).\n"
+                        android:textColor="#474747"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/sf_ui_display_bold"
+                        android:text="Database e DBMS: definizione e funzionamento"
+                        android:textColor="#ff0092"
+                        android:textSize="22sp" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="391dp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/sf_ui_display_medium"
+                        android:text="rima di occuparci di cos’e’ e come si usa SQL cerchiamo di capire cosa si intende con la parola database, che spesso in italiano viene tradotta come “base di dati“. Un database e’ una collezione di dati che viene gestita e organizzata da un software specifico, il DBMS (DataBase Management System, Sistema di Gestione di DataBase).\n\nUn DBMS e’ sostanzialmente uno strato software che si frappone fra l’utente ed i dati veri e propri. Grazie a questo strato intermedio l’utente e le applicazioni non accedono ai dati cosi’ come sono memorizzati effettivamente, cioè alla loro rappresentazione fisica, ma ne vedono solamente una rappresentazione logica. Ciò permette un elevato grado di indipendenza fra le applicazioni e la memorizzazione fisica dei dati. L’amministratore del database, se ne sente la necessità, può decidere di memorizzare i dati in maniera differente o anche di cambiare il DBMS senza che le applicazioni, e quindi gli utenti, ne risentano. La cosa importante e’ che non venga cambiata la rappresentazione logica di quei dati, che e’ la sola cosa che i loro utilizzatori conoscono. Questa rappresentazione logica viene chiamata ‘Schema del database’ ed e’ la forma di rappresentazione dei dati più a basso livello a cui un utente del database più accedere.\n\nLa caratteristica pricipale secondo cui i DBMS vengono normalmente classificati e’ appunto la rappresentazione logica dei dati che essi mostrano ai loro utilizzatori.\n"
+                        android:textColor="#474747"
+                        android:textSize="18sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/imageView5"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginRight="2dp"
+                        android:layout_weight="1"
+                        app:srcCompat="@drawable/sql_03" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/sf_ui_display_bold"
+                        android:text="Tipi di Database"
+                        android:textColor="#ff0092"
+                        android:textSize="22sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="391dp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/sf_ui_display_medium"
+                        android:text="Nel corso degli anni sono stati adottati numerosi modelli per i dati, a fronte dei quali esistono quindi vari tipi di database. I tipi piu’ comuni sono:\n"
+                        android:textColor="#474747"
+                        android:textSize="18sp" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/imageView9"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginRight="2dp"
+                        android:layout_weight="1"
+                        app:srcCompat="@drawable/sql_04" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="391dp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/sf_ui_display_medium"
+                        android:text="I primi due tipi di database, quelli gerarchici e reticolari, quasi appartengono ormai alla storia dell’informatica. La maggior parte dei database attualmente utilizzati appartiene alla categoria dei database relazionali. I motivi di questo successo (anche commerciale) vanno ricercati nella rigorosita’ matematica e nella potenzialita’ espressiva del modello relazionale su cui si basano, nella sua semplicita’ di utilizzo e, ultima ma non meno importante, nella disponibilita’ di un linguaggio di interrogazione standard, l’SQL, che, almeno potenzialmente, permette di sviluppare applicazioni independenti dal particolare DBMS relazionale utilizzato.\n\nI database ad oggetti sono la nuova frontiera nella ricerca sui database, infatti le loro caratteristiche di estendibilita’, derivanti dalla possibilita’ di definire nuovi tipi di dati e comportamenti, li rendono particolarmente appetibili per tutte quelle applicazioni che richiedono dati complessi, come ad esempio immagini, suoni o coordinate. Purtroppo la mancanza di un modello per gli oggetti universalmente accettato e la non disponibilita’ di un linguaggio di interrogazione standard fanno si’ che ogni produttore implementi la propria visione specifica, di solito assolutamente incompatibile con tutte le altre. Di recente sono apparsi sul mercato alcuni database, definiti object-relational, che cercano di introdurre nel modello relazionale le caratteristiche di estendibilita’ proprie dei database object-oriented.\n"
+                        android:textColor="#474747"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/sf_ui_display_bold"
+                        android:text="Cosa fa un DBMS"
+                        android:textColor="#ff0092"
+                        android:textSize="22sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="391dp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/sf_ui_display_medium"
+                        android:text="Indipendentemente dal tipo di database, le funzionalita’ principali che ci si deve aspettare da un DBMS sono quelle di:\n"
+                        android:textColor="#474747"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/imageView8"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginRight="2dp"
+                        android:layout_weight="1"
+                        app:srcCompat="@drawable/sql_05" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/sf_ui_display_bold"
+                        android:text="Definizione del modello relazionale"
+                        android:textColor="#ff0092"
+                        android:textSize="22sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="391dp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/sf_ui_display_medium"
+                        android:text="Il modello relazionale è stato proposto originariamente da E.F. Codd in un ormai famoso articolo del 1970. Grazie alla sua coerenza ed usabilità, il modello e’ diventato negli anni ’80 quello più utilizzato per la produzione di DBMS. La struttura fondamentale del modello relazionale e’ appunto la “relazione”, cioè una tabella bidimensionale costituita da righe (tuple) e colonne (attributi). Le relazioni rappresentano le entità che si ritiene essere interessanti nel database. Ogni istanza dell’entità troverà posto in una tupla della relazione, mentre gli attributi della relazione rappresenteranno le proprietà dell’entità. Ad esempio, se nel database si dovranno rappresentare delle persone, si potrà definire una relazione chiamata “Persone”, i cui attributi descrivono le caratteristiche delle persone (Figura 2). Ciascuna tupla della relazione “Persone” rappresenterà una particolare persona.\n"
+                        android:textColor="#474747"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/imageView6"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginRight="2dp"
+                        android:layout_weight="1"
+                        app:srcCompat="@drawable/sql_06" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/sf_ui_display_bold"
+                        android:text="Tuple, chiavi primarie, asterischi e algebra relazionale"
+                        android:textColor="#ff0092"
+                        android:textSize="22sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="391dp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/sf_ui_display_medium"
+                        android:text="Nel seguito si indicheranno entrambe (relazione ed istanza di relazione) con il termine “relazione”, a meno che non sia chiaro dal contesto a quale accezione ci si riferisce. Le tuple in una relazione sono un insieme nel senso matematico del termine, cioè una collezione non ordinata di elementi differenti. Per distinguere una tupla da un’altra si ricorre al concetto di “chiave primaria”, cioè ad un insieme di attributi che permettono di identificare univocamente una tupla in una relazione. Naturalmente in una relazione possono esserci più combinazioni di attributi che permettono di identificare univocamente una tupla (“chiavi candidate”), ma fra queste ne verrà scelta una sola da utilizzare come chiave primaria. Gli attributi della chiave primaria non possono assumere il valore null (che significa un valore non determinato), in quanto non permetterebbero più di identificare una particolare tupla in una relazione. Questa proprietà delle relazioni e delle loro chiavi primarie va sotto il nome di integrità delle entità (entity integrity).\n\nSpesso per ottenere una chiave primaria “economica”, cioè composta da pochi attributi facilmente manipolabili, si introducono uno o più attributi fittizi, che conterranno dei codici identificativi univoci per ogni tupla della relazione. Ogni attributo di una relazione e’ caratterizzato da un nome e da un dominio. Il dominio indica quali valori possono essere assunti da una colonna della relazione. Spesso un dominio viene definito attraverso la dichiarazione di un tipo per l’attributo (ad esempio dicendo che e’ una stringa di dieci caratteri), ma e’ anche possibile definire domini più complessi e precisi. Ad esempio per l’attributo “sesso” della nostra relazione “Persone” possiamo definire un dominio per cui gli unici valori validi sono ‘M’ e ‘F’; oppure per l’attributo “data_nascita” potremmo definire un dominio per cui vengono considerate valide solo le date di nascita dopo il primo gennaio del 1960, se nel nostro database non e’ previsto che ci siano persone con data di nascita antecedente a quella. Il DBMS si occuperà di controllare che negli attributi delle relazioni vengano inseriti solo i valori permessi dai loro domini. Caratteristica fondamentale dei domini di un database relazionale e’ che siano “atomici”, cioè che i valori contenuti nelle colonne non possano essere separati in valori di domini più semplici. Più formalmente si dice che non e’ possibile avere attributi multivalore (multivalued). Ad esempio, se una caratteristica delle persone nel nostro database fosse anche quella di avere uno o più figli, non sarebbe possibile scrivere la relazione Persone nel seguente modo:\n\nPersone (nome, cognome, data_nascita, sesso, stato_civile, figli)\n\nNelle precedenti relazioni gli asterischi (*) indicano gli attributi che compongono le loro chiavi primarie. Si noti l’introduzione nella relazione Persone dell’attributo numero_persona, attraverso il quale si assegna a ciascuna persona un identificativo numerico univoco che viene utilizzato come chiave primaria. Queste relazioni contengono solo attributi atomici. Se una persona ha più di un figlio, essi saranno rappresentati in tuple differenti della relazione Figli. Le varie caratteristiche dei figli sono rappresentate dagli attributi della relazione Figli. Il legame fra le due relazioni e’ costituito dagli attributi numero_persona che compaiono in entrambe le relazioni e che permettono di assegnare ciascuna tupla della relazione figli ad una particolare tupla della relazione Persone. Più formalmente si dice che l’attributo numero_persona della relazione Figli e’ una chiave esterna (foreign key) verso la relazione Persone. Una chiave esterna e’ una combinazione di attributi di una relazione che sono chiave primaria per un’altra relazione. Una caratteristica fondamentale dei valori presenti in una chiave esterna e’ che, a meno che non siano null, devono corrispondere a valori esistenti nella chiave primaria della relazione a cui si riferiscono. Nel nostro esempio ciò significa che non può esistere nella relazione Figli una tupla con un valore dell’attributo numero_persona, senza che anche nella relazione Persone esista una tupla con lo stesso valore per la sua chiave primaria. Questa proprietà va sotto il nome di integrità referenziale (referential integrity)\n\nUno dei grandi vantaggi del modello relazionale è che esso definisce anche un algebra, chiamata appunto “algebra relazionale”. Tutte le manipolazioni possibili sulle relazioni sono ottenibili grazie ala combinazione di cinque soli operatori: REStrICT, PROJECT, TIMES, UNION e MINUS. Per comodità sono stati anche definiti tre operatori addizionali che comunque possono essere ottenuti applicando i soli cinque operatori fondamentali: JOIN, INTERSECT e DIVIDE. Gli operatori relazionali ricevono come argomento una relazione o un insieme di relazioni e restituiscono una singola relazione come risultato. Vediamo brevemente questi otto operatori:\n"
+                        android:textColor="#474747"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/imageView15"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginRight="2dp"
+                        android:layout_weight="1"
+                        android:contentDescription="TODO"
+                        app:srcCompat="@drawable/sql_07" />
+                </LinearLayout>
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/sf_ui_display_bold"
+                        android:text="Select"
+                        android:textColor="#ff0092"
+                        android:textSize="22sp" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="391dp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/sf_ui_display_medium"
+                        android:text="La sintassi completa è la seguente:\n"
+                        android:textColor="#474747"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/imageView30"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginRight="2dp"
+                        android:layout_weight="1"
+                        android:contentDescription="TODO"
+                        app:srcCompat="@drawable/sql_08"/>
+                </LinearLayout>
+
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/sf_ui_display_bold"
+                        android:text="Group by"
+                        android:textColor="#ff0092"
+                        android:textSize="22sp" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="391dp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/sf_ui_display_medium"
+                        android:text="La clausola GROUP BY serve a specificare quali sono i campi su cui effettuare i raggruppamenti: il motore di query, per ogni riga esaminerà tali campi e la classificherà nel gruppo corrispondente. Si possono specificare calcoli da effettuare per ogni gruppo.\n\nLa sintassi è la seguente:\n "
+                        android:textColor="#474747"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/imageView17"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginRight="2dp"
+                        android:layout_weight="1"
+                        android:contentDescription="TODO"
+                        app:srcCompat="@drawable/sql_09"/>
+                </LinearLayout>
+
+
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="391dp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/sf_ui_display_medium"
+                        android:text="\nPer altre istruzioni (quali ad esempio UPDATE, DELETE, Subquery e trigger )e per approfondire meglio, rimandiamo al seguente sito:\n\nhttps://www.html.it/guide/guida-linguaggio-sql/\n\nGrazie per l'attenzione.\n"
+                        android:textColor="#474747"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="151dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+
+                    <Button
+                        android:id="@+id/button_quiz"
+                        android:layout_width="200dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/button_bkg"
+                        android:fontFamily="@font/sf_ui_display_medium"
+                        android:text="Tenta il quiz"
+                        android:textAlignment="center"
+                        android:textAllCaps="false"
+                        android:textColor="#FFFFFF"
+                        android:textSize="20sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.01999998" />
+
+                    <Button
+                        android:id="@+id/button_home"
+                        android:layout_width="200dp"
+                        android:layout_height="60dp"
+                        android:layout_marginTop="50dp"
+                        android:layout_marginBottom="30dp"
+                        android:background="@drawable/button_bkg"
+                        android:fontFamily="@font/sf_ui_display_medium"
+                        android:text="Torna alla pagina iniziale"
+                        android:textAlignment="center"
+                        android:textAllCaps="false"
+                        android:textColor="#FFFFFF"
+                        android:textSize="20sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.85" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </LinearLayout>
+        </ScrollView>
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottom_navigation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#ffff"
+            app:itemIconTint="@drawable/selector"
+            app:itemTextColor="@drawable/selector"
+            app:menu="@menu/menu_navigation" />
+
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="300dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="@android:color/white">
+
+        <include layout="@layout/main_nav_drawer" />
+
+
+    </RelativeLayout>
+
+
+</androidx.drawerlayout.widget.DrawerLayout>
+

@@ -1,17 +1,236 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Backtracking">
 
-    <TextView
-        android:id="@+id/textView18"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Backtracking"
-        android:textSize="60sp"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="287dp" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <include
+            layout="@layout/main_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="43dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/freccia_dietro"
+                android:layout_width="31dp"
+                android:layout_height="31dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:contentDescription="TODO"
+                android:src="@drawable/back_arrow" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="10dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/sf_ui_display_bold"
+                android:text="BackTraking"
+                android:textColor="#474747"
+                android:textSize="30sp" />
+
+
+        </LinearLayout>
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="524dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/sf_ui_display_bold"
+                        android:text="In cosa consiste l'algoritmo"
+                        android:textColor="#ff0092"
+                        android:textSize="22sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="391dp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/sf_ui_display_medium"
+                        android:text="Il backtracking (in italiano, si può definire monitoraggio a ritroso) è una tecnica per trovare soluzioni a problemi in cui devono essere soddisfatti dei vincoli. Questa tecnica enumera tutte le possibili soluzioni e scarta quelle che non soddisfano i vincoli.Una tecnica classica consiste nell'esplorazione di strutture ad albero e tenere traccia di tutti i nodi e i rami visitati in precedenza, in modo da poter tornare indietro al più vicino nodo che conteneva un cammino ancora inesplorato nel caso che la ricerca nel ramo attuale non abbia successo. I nodi a profondità uguale rappresentano i possibili valori di una variabile.\n\nUna applicazione del backtracking è nei programmi per giocare a scacchi, che generano tutte le mosse possibili per una profondità di N mosse a partire da quella attuale e poi esaminano con il backtracking le varie alternative, selezionando alla fine quella migliore.\n\nIl backtracking ha una complessità esponenziale, quindi è poco efficiente nell'affrontare problemi che non siano NP-completi. In generale, comunque, l'algoritmo integra euristiche che permettono di diminuirne la complessità.\n\nQuesta tecnica è alla base del linguaggio di programmazione Prolog.\n\nI possibili tipi di backtracking sono molti, con funzionamento diverso, caratteristiche diverse e vantaggi diversi. I più conosciuti sono:\n\n◘ Backtracking cronologico (BT).\n\n◘ Backjumping (BJ).\n\n◘ Conflict-Directed backjumping (CBJ).\n\n◘ Forward checking with simple backtracking (FC).\n\n ◘ Backmarking with simple backtracking (BM).\n\n I primi quattro algoritmi vengono definiti algoritmi fondamentali, in quanto rappresentano diverse “filosofie” di base e diversi metodi per mettere in pratica il backtracking; mentre l'ultimo è invece un noto esempio di algoritmo ibrido, cioè un algoritmo che può essere considerato una variazione degli algoritmi fondamentali, ma che proprio per la sua differenza dagli algoritmi da cui deriva può portare numerosi vantaggi.\n\nIl seguente video fornisce una spiegazione dettagliata e rapida dell'algoritmo:\n"
+                        android:textColor="#474747"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="377dp"
+                    android:orientation="horizontal">
+
+                    <FrameLayout
+                        android:id="@+id/frameLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        app:layout_constraintBottom_toBottomOf="@+id/video_view"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <VideoView
+                        android:id="@+id/video_view"
+                        android:layout_width="415dp"
+                        android:layout_height="383dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.461"
+                        app:layout_constraintStart_toStartOf="@+id/frameLayout"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.4"
+                        tools:ignore="MissingConstraints" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="391dp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/sf_ui_display_medium"
+                        android:text="\nGrazie mille per l'attenzione\n\n"
+                        android:textColor="#474747"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="151dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+
+                    <Button
+                        android:id="@+id/button_quiz"
+                        android:layout_width="200dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/button_bkg"
+                        android:fontFamily="@font/sf_ui_display_medium"
+                        android:text="Tenta il quiz"
+                        android:textAlignment="center"
+                        android:textAllCaps="false"
+                        android:textColor="#FFFFFF"
+                        android:textSize="20sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.01999998" />
+
+                    <Button
+                        android:id="@+id/button_home"
+                        android:layout_width="200dp"
+                        android:layout_height="60dp"
+                        android:layout_marginTop="50dp"
+                        android:layout_marginBottom="30dp"
+                        android:background="@drawable/button_bkg"
+                        android:fontFamily="@font/sf_ui_display_medium"
+                        android:text="Torna alla pagina iniziale"
+                        android:textAlignment="center"
+                        android:textAllCaps="false"
+                        android:textColor="#FFFFFF"
+                        android:textSize="20sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.85" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </LinearLayout>
+        </ScrollView>
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottom_navigation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#ffff"
+            app:itemIconTint="@drawable/selector"
+            app:itemTextColor="@drawable/selector"
+            app:menu="@menu/menu_navigation" />
+
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="300dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="@android:color/white">
+
+        <include layout="@layout/main_nav_drawer" />
+
+
+    </RelativeLayout>
+
+
+</androidx.drawerlayout.widget.DrawerLayout>
+
