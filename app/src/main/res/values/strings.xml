@@ -124,6 +124,7 @@
     <string name="leggi_il_corso_sui_bst">Leggi il corso sui BST</string>
     <string name="leggi_il_corso_di_angularjs">Leggi il corso di AngularJS</string>
     <string name="carico_la_pagina">Carico la pagina...</string>
+    <string name="nessun_risultato_trovato">Nessun risultato trovato :(</string>
 
 >>>>>>> 9432bf02e18e6d2e1811e853dd9c2a97542eed89
 </resources>

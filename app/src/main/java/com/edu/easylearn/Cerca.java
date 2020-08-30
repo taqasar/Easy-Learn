@@ -90,6 +90,7 @@ public class Cerca extends AppCompatActivity {
     private List<items> itemsList = new ArrayList<>();
     CustomAdapter customAdapter;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -202,6 +203,7 @@ public class Cerca extends AppCompatActivity {
 
         customAdapter = new CustomAdapter(itemsList,this);
         grid.setAdapter(customAdapter);
+
     }
 
     @Override
@@ -297,7 +299,6 @@ public class Cerca extends AppCompatActivity {
                         filter_result.count = item_model_list.size();
                         filter_result.values = item_model_list;
                     }else{
-
                         String searchStr = constraint.toString().toLowerCase();
                         List<items> resultData = new ArrayList<>();
 
@@ -305,12 +306,10 @@ public class Cerca extends AppCompatActivity {
                             if(itm.getName().contains(searchStr)){
                                 resultData.add(itm);
                             }
-
                             filter_result.count = resultData.size();
                             filter_result.values = resultData;
                         }
                     }
-
                     return filter_result;
                 }
 
