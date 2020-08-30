@@ -4,4 +4,5 @@
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>
     <color name="el_pink">#FF0092</color>
+    <color name="stroke_color">#66474747</color>
 </resources>
