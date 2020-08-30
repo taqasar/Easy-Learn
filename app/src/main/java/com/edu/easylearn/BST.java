@@ -49,7 +49,6 @@ import es.dmoral.toasty.Toasty;
 public class BST extends AppCompatActivity {
 
 
-
     private ImageView back_arrow;
     private Button home_button;
     private Button quiz_button;
@@ -78,8 +77,8 @@ public class BST extends AppCompatActivity {
         getSupportActionBar().hide();
 
         VideoView videoView = findViewById(R.id.video_view);
-        String videoPath ="android.resource://" + getPackageName() + "/" + R.raw.backtracktutorial;
-        Uri uri= Uri.parse(videoPath);
+        String videoPath = "android.resource://" + getPackageName() + "/" + R.raw.backtracktutorial;
+        Uri uri = Uri.parse(videoPath);
         videoView.setVideoURI(uri);
 
         MediaController mediaController = new MediaController(this);
@@ -87,12 +86,11 @@ public class BST extends AppCompatActivity {
         mediaController.setAnchorView(videoView);
 
 
-
         home_button = findViewById(R.id.button_home);
         home_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent home_intent = new Intent(BST.this,AlgoritmiEStruttureDati.class);
+                Intent home_intent = new Intent(BST.this, AlgoritmiEStruttureDati.class);
                 startActivity(home_intent);
             }
         });
@@ -101,11 +99,10 @@ public class BST extends AppCompatActivity {
         quiz_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent quiz_intent = new Intent(BST.this,Quiz_bst.class);
+                Intent quiz_intent = new Intent(BST.this, Quiz_bst.class);
                 startActivity(quiz_intent);
             }
         });
-
 
 
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
@@ -123,7 +120,7 @@ public class BST extends AppCompatActivity {
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-                switch ( menuItem.getItemId()) {
+                switch (menuItem.getItemId()) {
                     case R.id.home:
                         startActivity(new Intent(getApplicationContext(), Home.class));
                         overridePendingTransition(0, 0);
@@ -151,13 +148,12 @@ public class BST extends AppCompatActivity {
         });
 
 
-
         back_arrow = findViewById(R.id.freccia_dietro);
 
         back_arrow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent back_home = new Intent(BST.this,AlgoritmiEStruttureDati.class);
+                Intent back_home = new Intent(BST.this, AlgoritmiEStruttureDati.class);
                 startActivity(back_home);
             }
         });
@@ -181,8 +177,8 @@ public class BST extends AppCompatActivity {
                         signOut();
                         break;
                 }
-                Toasty.success(BST.this,"Sign out effettuato", Toast.LENGTH_LONG).show();
-                startActivity(new Intent(BST.this,Login.class));
+                Toasty.success(BST.this, "Sign out effettuato", Toast.LENGTH_LONG).show();
+                startActivity(new Intent(BST.this, Login.class));
             }
         });
 
@@ -195,8 +191,8 @@ public class BST extends AppCompatActivity {
                         signOut();
                         break;
                 }
-                Toasty.success(BST.this,"Sign out effettuato", Toast.LENGTH_LONG).show();
-                startActivity(new Intent(BST.this,Login.class));
+                Toasty.success(BST.this, "Sign out effettuato", Toast.LENGTH_LONG).show();
+                startActivity(new Intent(BST.this, Login.class));
             }
         });
 
@@ -217,25 +213,25 @@ public class BST extends AppCompatActivity {
         });
     }
 
-    private void choosePic(){
+    private void choosePic() {
         Intent gallery_intent = new Intent();
         gallery_intent.setType("image/*");
         gallery_intent.setAction(Intent.ACTION_GET_CONTENT);
-        startActivityForResult(gallery_intent,1);
+        startActivityForResult(gallery_intent, 1);
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if(requestCode == 1 && resultCode == RESULT_OK && data != null && data.getData() != null){
+        if (requestCode == 1 && resultCode == RESULT_OK && data != null && data.getData() != null) {
             img_uri = data.getData();
             img_prof.setImageURI(img_uri);
             uploadPic();
         }
     }
 
-    private void uploadPic(){
+    private void uploadPic() {
 
         final ProgressDialog pd = new ProgressDialog(this);
         pd.setTitle("Carico la foto...");
@@ -250,7 +246,7 @@ public class BST extends AppCompatActivity {
                     public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                         // Get a URL to the uploaded content
                         pd.dismiss();
-                        Toasty.success(BST.this,"Foto caricata", Toast.LENGTH_LONG).show();
+                        Toasty.success(BST.this, "Foto caricata", Toast.LENGTH_LONG).show();
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {
@@ -258,7 +254,7 @@ public class BST extends AppCompatActivity {
                     public void onFailure(@NonNull Exception exception) {
                         // Handle unsuccessful uploads
                         pd.dismiss();
-                        Toasty.error(BST.this,"Foto non caricata",Toast.LENGTH_LONG).show();
+                        Toasty.error(BST.this, "Foto non caricata", Toast.LENGTH_LONG).show();
                     }
                 }).addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
             @Override
@@ -269,12 +265,12 @@ public class BST extends AppCompatActivity {
         });
     }
 
-    private void getUserInfo(){
+    private void getUserInfo() {
         String id = auth.getCurrentUser().getUid();
         mDatabase.child("Utenti").child(id).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if(snapshot.exists()){
+                if (snapshot.exists()) {
                     String name = snapshot.child("nome").getValue().toString();
                     String email = snapshot.child("e-mail").getValue().toString();
 
@@ -295,15 +291,15 @@ public class BST extends AppCompatActivity {
                 .addOnCompleteListener(this, new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
-                        Toasty.success(BST.this,"Sign out effettuato", Toast.LENGTH_LONG).show();
+                        Toasty.success(BST.this, "Sign out effettuato", Toast.LENGTH_LONG).show();
                         finish();
                     }
                 });
     }
 
-    public void ClickMenu(View view ) {
+    public void ClickMenu(View view) {
         //Open drawer
-        openDrawer (drawerLayout);
+        openDrawer(drawerLayout);
     }
 
     private static void openDrawer(DrawerLayout drawerLayout) {
@@ -313,14 +309,14 @@ public class BST extends AppCompatActivity {
 
     public void ClickLogo(View view) {
         //Close drawer
-        startActivity(new Intent(BST.this,Home.class));
+        startActivity(new Intent(BST.this, Home.class));
 
     }
 
     public static void closeDrawer(DrawerLayout drawerLayout) {
         //Close drawer layout
         //Check condition
-        if(drawerLayout.isDrawerOpen(GravityCompat.START)) {
+        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
             //When drawer is open
             //Close drawer
             drawerLayout.closeDrawer(GravityCompat.START);
@@ -328,7 +324,7 @@ public class BST extends AppCompatActivity {
     }
 
 
-    public  void ClickCross (View view) {
+    public void ClickCross(View view) {
         //Recreate activity
         recreate();
     }
@@ -346,7 +342,7 @@ public class BST extends AppCompatActivity {
 
     public void ClickCorsiSalvati(View view) {
         //Redirect activity to CorsiSalvati
-        redirectActivity(this, CorsiSalvati.class );
+        redirectActivity(this, CorsiSalvati.class);
     }
 
 
@@ -357,7 +353,7 @@ public class BST extends AppCompatActivity {
 
     public void ClickImpostazioni(View view) {
         //Redirect activity to Impostazioni
-        redirectActivity(this, Impostazioni.class );
+        redirectActivity(this, Impostazioni.class);
     }
 
     public void ClickAbout(View view) {
@@ -375,8 +371,8 @@ public class BST extends AppCompatActivity {
             String share_msg = "https://play.google.com/store/apps/details?id=" + BuildConfig.APPLICATION_ID + "\n\n";
             intent.putExtra(Intent.EXTRA_TEXT, share_msg);
             startActivity(Intent.createChooser(intent, "Condividi tramite:"));
-        }catch (Exception e){
-            Toasty.error(BST.this,"Errore condivisione",Toast.LENGTH_LONG).show();
+        } catch (Exception e) {
+            Toasty.error(BST.this, "Errore condivisione", Toast.LENGTH_LONG).show();
         }
     }
 
@@ -388,7 +384,7 @@ public class BST extends AppCompatActivity {
 
     public static void logout(final Activity activity) {
         //Initialize alert dialog
-        AlertDialog.Builder builder= new AlertDialog.Builder(activity);
+        AlertDialog.Builder builder = new AlertDialog.Builder(activity);
         //Set title
         builder.setTitle("Logout");
         //Set message
@@ -416,9 +412,9 @@ public class BST extends AppCompatActivity {
 
     }
 
-    public static void  redirectActivity(Activity activity, Class aClass) {
+    public static void redirectActivity(Activity activity, Class aClass) {
         //Initialize intent
-        Intent intent= new Intent(activity, aClass);
+        Intent intent = new Intent(activity, aClass);
         //Set flag
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         //Start Activity

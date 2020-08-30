@@ -76,35 +76,7 @@
 
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_vertical"
-        android:onClick="ClickCorsiSalvati"
-        android:orientation="horizontal">
 
-        <ImageView
-            android:layout_width="22dp"
-            android:layout_height="22dp"
-            android:layout_margin="20dp"
-            android:layout_marginEnd="0dp"
-            android:background="#00FFFFFF"
-            android:src="@drawable/prefe" />
-
-        <TextView
-            android:id="@+id/font"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_weight="1"
-            android:fontFamily="@font/sf_ui_display_medium"
-            android:padding="12dp"
-            android:text="Corsi Salvati"
-            android:textColor="#474747"
-            android:textSize="18sp" />
-
-
-    </LinearLayout>
 
 
     <LinearLayout
@@ -247,7 +219,7 @@
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_gravity="center"
-            android:alpha="1"
+            android:alpha="0.6"
             android:paddingLeft="5dp"
             android:src="@drawable/logout" />
 
@@ -257,7 +229,7 @@
             android:layout_height="30dp"
             android:layout_gravity="center"
             android:layout_weight="0"
-            android:alpha="1"
+            android:alpha="0.6"
             android:fontFamily="@font/sf_ui_display_medium"
             android:gravity="left"
             android:paddingLeft="10dp"

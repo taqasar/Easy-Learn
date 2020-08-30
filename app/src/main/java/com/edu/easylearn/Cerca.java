@@ -73,19 +73,19 @@ public class Cerca extends AppCompatActivity {
     private DatabaseReference mDatabase;
 
     private GridView grid;
-    private int images[] = {R.drawable.responsive,R.drawable.web,R.drawable.rjs,R.drawable.kotlin,R.drawable.redux,
-                            R.drawable.tabella,R.drawable.json,R.drawable.api,R.drawable.npm,R.drawable.firefox,
-                            R.drawable.ricerca_lin,R.drawable.bubble,R.drawable.linux,R.drawable.nosql,R.drawable.ios_safari,
-                            R.drawable.git,R.drawable.server,R.drawable.ram,R.drawable.frontend,R.drawable.backend,
-                            R.drawable.webserver,R.drawable.ide,R.drawable.uikit,R.drawable.xml,R.drawable.webcomp,
-                            R.drawable.nqueen,R.drawable.compilatore,R.drawable.google_cerca,R.drawable.dart,R.drawable.xcode,
-                            R.drawable.intellij,R.drawable.pack,R.drawable.command,R.drawable.sistema,R.drawable.editor,
-                            R.drawable.astudio,R.drawable.sito,R.drawable.app,R.drawable.framework,R.drawable.jquery};
+    private int images[] = {R.drawable.responsive, R.drawable.web, R.drawable.rjs, R.drawable.kotlin, R.drawable.redux,
+            R.drawable.tabella, R.drawable.json, R.drawable.api, R.drawable.npm, R.drawable.firefox,
+            R.drawable.ricerca_lin, R.drawable.bubble, R.drawable.linux, R.drawable.nosql, R.drawable.ios_safari,
+            R.drawable.git, R.drawable.server, R.drawable.ram, R.drawable.frontend, R.drawable.backend,
+            R.drawable.webserver, R.drawable.ide, R.drawable.uikit, R.drawable.xml, R.drawable.webcomp,
+            R.drawable.nqueen, R.drawable.compilatore, R.drawable.google_cerca, R.drawable.dart, R.drawable.xcode,
+            R.drawable.intellij, R.drawable.pack, R.drawable.command, R.drawable.sistema, R.drawable.editor,
+            R.drawable.astudio, R.drawable.sito, R.drawable.app, R.drawable.framework, R.drawable.jquery};
 
-    private String names[] = {"responsive","web","react js","kotlin","redux","tabella sql","json","api","npm","firefox",
-                            "ricerca lineare","bubble sort","linux","nosql","ios","git","data center","memoria","frontend","backend","web server",
-                            "ide","ui kit","xml","web component","n regine","compilatore","google","dart","xcode","intellij","package","terminale","sistema",
-                            "editor","android studio","sito web","app","framework","jquery"};
+    private String names[] = {"responsive", "web", "react js", "kotlin", "redux", "tabella sql", "json", "api", "npm", "firefox",
+            "ricerca lineare", "bubble sort", "linux", "nosql", "ios", "git", "data center", "memoria", "frontend", "backend", "web server",
+            "ide", "ui kit", "xml", "web component", "n regine", "compilatore", "google", "dart", "xcode", "intellij", "package", "terminale", "sistema",
+            "editor", "android studio", "sito web", "app", "framework", "jquery"};
 
     private List<items> itemsList = new ArrayList<>();
     CustomAdapter customAdapter;
@@ -96,7 +96,7 @@ public class Cerca extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cerca);
 
-       // getSupportActionBar().hide();
+        // getSupportActionBar().hide();
         ActionBar actionBar = getSupportActionBar();
         ColorDrawable colorDrawable = new ColorDrawable(Color.parseColor("#ff0092"));
         actionBar.setBackgroundDrawable(colorDrawable);
@@ -117,7 +117,7 @@ public class Cerca extends AppCompatActivity {
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-                switch ( menuItem.getItemId()) {
+                switch (menuItem.getItemId()) {
                     case R.id.home:
                         startActivity(new Intent(getApplicationContext(), Home.class));
                         overridePendingTransition(0, 0);
@@ -159,8 +159,8 @@ public class Cerca extends AppCompatActivity {
                         signOut();
                         break;
                 }
-                Toasty.success(Cerca.this,"Sign out effettuato", Toast.LENGTH_LONG).show();
-                startActivity(new Intent(Cerca.this,Login.class));
+                Toasty.success(Cerca.this, "Sign out effettuato", Toast.LENGTH_LONG).show();
+                startActivity(new Intent(Cerca.this, Login.class));
             }
         });
 
@@ -173,8 +173,8 @@ public class Cerca extends AppCompatActivity {
                         signOut();
                         break;
                 }
-                Toasty.success(Cerca.this,"Sign out effettuato", Toast.LENGTH_LONG).show();
-                startActivity(new Intent(Cerca.this,Login.class));
+                Toasty.success(Cerca.this, "Sign out effettuato", Toast.LENGTH_LONG).show();
+                startActivity(new Intent(Cerca.this, Login.class));
             }
         });
 
@@ -196,19 +196,19 @@ public class Cerca extends AppCompatActivity {
 
         grid = findViewById(R.id.griglia);
 
-        for(int i = 0; i < images.length; i++){
-            items it = new items(names[i],images[i]);
+        for (int i = 0; i < images.length; i++) {
+            items it = new items(names[i], images[i]);
             itemsList.add(it);
         }
 
-        customAdapter = new CustomAdapter(itemsList,this);
+        customAdapter = new CustomAdapter(itemsList, this);
         grid.setAdapter(customAdapter);
 
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu,menu);
+        getMenuInflater().inflate(R.menu.menu, menu);
         MenuItem menuItem = menu.findItem(R.id.view_cerca);
         SearchView searchView = (SearchView) menuItem.getActionView();
 
@@ -233,14 +233,14 @@ public class Cerca extends AppCompatActivity {
 
         int id = item.getItemId();
 
-        if(id == R.id.view_cerca){
+        if (id == R.id.view_cerca) {
             return true;
         }
 
         return super.onOptionsItemSelected(item);
     }
 
-    private  class CustomAdapter extends BaseAdapter implements Filterable {
+    private class CustomAdapter extends BaseAdapter implements Filterable {
 
         private List<items> item_model_list;
         private List<items> item_model_list_filter;
@@ -269,7 +269,7 @@ public class Cerca extends AppCompatActivity {
 
         @Override
         public View getView(final int position, View convertView, ViewGroup parent) {
-            View view = getLayoutInflater().inflate(R.layout.row_items,null);
+            View view = getLayoutInflater().inflate(R.layout.row_items, null);
             ImageView img_view = view.findViewById(R.id.imageView_tessere);
             TextView tvName = view.findViewById(R.id.tvName);
 
@@ -279,8 +279,8 @@ public class Cerca extends AppCompatActivity {
             img_view.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(Cerca.this,Redirect.class);
-                    intent.putExtra("DOVE",String.valueOf(item_model_list_filter.get(position).getName()));
+                    Intent intent = new Intent(Cerca.this, Redirect.class);
+                    intent.putExtra("DOVE", String.valueOf(item_model_list_filter.get(position).getName()));
                     startActivity(intent);
                 }
             });
@@ -295,15 +295,15 @@ public class Cerca extends AppCompatActivity {
                 protected FilterResults performFiltering(CharSequence constraint) {
                     FilterResults filter_result = new FilterResults();
 
-                    if(constraint == null || constraint.length() == 0){
+                    if (constraint == null || constraint.length() == 0) {
                         filter_result.count = item_model_list.size();
                         filter_result.values = item_model_list;
-                    }else{
+                    } else {
                         String searchStr = constraint.toString().toLowerCase();
                         List<items> resultData = new ArrayList<>();
 
-                        for(items itm:item_model_list){
-                            if(itm.getName().contains(searchStr)){
+                        for (items itm : item_model_list) {
+                            if (itm.getName().contains(searchStr)) {
                                 resultData.add(itm);
                             }
                             filter_result.count = resultData.size();
@@ -324,25 +324,25 @@ public class Cerca extends AppCompatActivity {
     }
 
 
-    private void choosePic(){
+    private void choosePic() {
         Intent gallery_intent = new Intent();
         gallery_intent.setType("image/*");
         gallery_intent.setAction(Intent.ACTION_GET_CONTENT);
-        startActivityForResult(gallery_intent,1);
+        startActivityForResult(gallery_intent, 1);
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if(requestCode == 1 && resultCode == RESULT_OK && data != null && data.getData() != null){
+        if (requestCode == 1 && resultCode == RESULT_OK && data != null && data.getData() != null) {
             img_uri = data.getData();
             img_prof.setImageURI(img_uri);
             uploadPic();
         }
     }
 
-    private void uploadPic(){
+    private void uploadPic() {
 
         final ProgressDialog pd = new ProgressDialog(this);
         pd.setTitle("Carico la foto...");
@@ -357,7 +357,7 @@ public class Cerca extends AppCompatActivity {
                     public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                         // Get a URL to the uploaded content
                         pd.dismiss();
-                        Toasty.success(Cerca.this,"Foto caricata", Toast.LENGTH_LONG).show();
+                        Toasty.success(Cerca.this, "Foto caricata", Toast.LENGTH_LONG).show();
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {
@@ -365,7 +365,7 @@ public class Cerca extends AppCompatActivity {
                     public void onFailure(@NonNull Exception exception) {
                         // Handle unsuccessful uploads
                         pd.dismiss();
-                        Toasty.error(Cerca.this,"Foto non caricata",Toast.LENGTH_LONG).show();
+                        Toasty.error(Cerca.this, "Foto non caricata", Toast.LENGTH_LONG).show();
                     }
                 }).addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
             @Override
@@ -376,12 +376,12 @@ public class Cerca extends AppCompatActivity {
         });
     }
 
-    private void getUserInfo(){
+    private void getUserInfo() {
         String id = auth.getCurrentUser().getUid();
         mDatabase.child("Utenti").child(id).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if(snapshot.exists()){
+                if (snapshot.exists()) {
                     String name = snapshot.child("nome").getValue().toString();
                     String email = snapshot.child("e-mail").getValue().toString();
 
@@ -402,15 +402,15 @@ public class Cerca extends AppCompatActivity {
                 .addOnCompleteListener(this, new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
-                        Toasty.success(Cerca.this,"Sign out effettuato", Toast.LENGTH_LONG).show();
+                        Toasty.success(Cerca.this, "Sign out effettuato", Toast.LENGTH_LONG).show();
                         finish();
                     }
                 });
     }
 
-    public void ClickMenu(View view ) {
+    public void ClickMenu(View view) {
         //Open drawer
-        openDrawer (drawerLayout);
+        openDrawer(drawerLayout);
     }
 
     private static void openDrawer(DrawerLayout drawerLayout) {
@@ -420,14 +420,14 @@ public class Cerca extends AppCompatActivity {
 
     public void ClickLogo(View view) {
         //Close drawer
-        startActivity(new Intent(Cerca.this,Home.class));
+        startActivity(new Intent(Cerca.this, Home.class));
 
     }
 
     public static void closeDrawer(DrawerLayout drawerLayout) {
         //Close drawer layout
         //Check condition
-        if(drawerLayout.isDrawerOpen(GravityCompat.START)) {
+        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
             //When drawer is open
             //Close drawer
             drawerLayout.closeDrawer(GravityCompat.START);
@@ -435,7 +435,7 @@ public class Cerca extends AppCompatActivity {
     }
 
 
-    public  void ClickCross (View view) {
+    public void ClickCross(View view) {
         //Recreate activity
         recreate();
     }
@@ -453,7 +453,7 @@ public class Cerca extends AppCompatActivity {
 
     public void ClickCorsiSalvati(View view) {
         //Redirect activity to CorsiSalvati
-        redirectActivity(this, CorsiSalvati.class );
+        redirectActivity(this, CorsiSalvati.class);
     }
 
 
@@ -464,7 +464,7 @@ public class Cerca extends AppCompatActivity {
 
     public void ClickImpostazioni(View view) {
         //Redirect activity to Impostazioni
-        redirectActivity(this, Impostazioni.class );
+        redirectActivity(this, Impostazioni.class);
     }
 
     public void ClickAbout(View view) {
@@ -482,8 +482,8 @@ public class Cerca extends AppCompatActivity {
             String share_msg = "https://play.google.com/store/apps/details?id=" + BuildConfig.APPLICATION_ID + "\n\n";
             intent.putExtra(Intent.EXTRA_TEXT, share_msg);
             startActivity(Intent.createChooser(intent, "Condividi tramite:"));
-        }catch (Exception e){
-            Toasty.error(Cerca.this,"Errore condivisione",Toast.LENGTH_LONG).show();
+        } catch (Exception e) {
+            Toasty.error(Cerca.this, "Errore condivisione", Toast.LENGTH_LONG).show();
         }
     }
 
@@ -495,7 +495,7 @@ public class Cerca extends AppCompatActivity {
 
     public static void logout(final Activity activity) {
         //Initialize alert dialog
-        AlertDialog.Builder builder= new AlertDialog.Builder(activity);
+        AlertDialog.Builder builder = new AlertDialog.Builder(activity);
         //Set title
         builder.setTitle("Logout");
         //Set message
@@ -523,9 +523,9 @@ public class Cerca extends AppCompatActivity {
 
     }
 
-    public static void  redirectActivity(Activity activity, Class aClass) {
+    public static void redirectActivity(Activity activity, Class aClass) {
         //Initialize intent
-        Intent intent= new Intent(activity, aClass);
+        Intent intent = new Intent(activity, aClass);
         //Set flag
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         //Start Activity
