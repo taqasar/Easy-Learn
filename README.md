@@ -9,7 +9,7 @@ The aim of this app is to give a first easy and sweet approach to the **Computer
 * [Matteo Alfonzi](https://www.instagram.com/matteoalfonzi/)
 \
 \
-❌ Note thay Easy Learn is **not** available to download in online marketplaces because it is an academic project.
+❌ Note thay Easy Learn is **not** available to download at online marketplaces because it is an academic project.
 \
 \
 *Preview* 📸
